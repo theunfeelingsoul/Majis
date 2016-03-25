@@ -1,0 +1,102 @@
+.h3{
+	font-size: 15px;
+}
+/*********************************************************/
+/**************** BEGIN NAVBAR STYLING *******************/
+/*********************************************************/
+.nav-title{
+	border-bottom: 1px solid #d8d7d7;
+	/*padding: 10px*/
+    padding: 10px 10px 10px 15px;
+    background-color: #EFEFEF;
+    color: #337ab7;
+
+}
+
+.nav-sidebar .glyphicon{
+	padding-right:5px;
+}
+
+.navbar{
+	margin-bottom: 0px;
+}
+
+/*********************************************************/
+/****************** END NAVBAR STYLING *******************/
+/*********************************************************/
+
+
+/*********************************************************/
+/*************** BEGIN SIDEBAR STYLING *******************/
+/*********************************************************/
+.sidebar{
+	background-color:#f5f5f5;
+	padding-left: 0px;
+    padding-right: 0px;
+    border-right: 1px solid #d8d7d7;
+
+}
+
+/* 
+ * all li have default padding we just put O to 
+ * remove them inorder for the line to fit
+*/
+.nav-sidebar li{
+	border-bottom: 1px solid #d8d7d7;
+	padding:0px; 
+}
+
+.sidebar ul{
+	padding: 0px;
+
+}
+/*.row col-md-2 {
+	float: left;
+}*/
+/*.row col-md-10 {
+float: right;
+}*/
+/*********************************************************/
+/***************** END SIDEBAR STYLING *******************/
+/*********************************************************/
+
+/*********************************************************/
+/***************** START MAP STYLING *******************/
+/*********************************************************/
+
+#map{
+	width: 80%;
+	margin-left: 18px;
+	margin-top:20px;
+	height: 400px;
+	border: 1px solid #c3c3c3; 
+}
+/*********************************************************/
+/***************** END MAP STYLING *******************/
+/*********************************************************/
+
+
+
+
+/*********************************************************/
+/***************** START UPDATE STATUS STYLING *******************/
+/*********************************************************/
+
+.history-problem-table{
+	height: 300px;
+	overflow: auto;
+}
+
+.history-problem-table .glyphicon-remove-circle{
+	color: #FF0000;
+}
+
+.history-problem-table .glyphicon-ok-circle{
+	color: #4AC948;
+}
+
+
+/*********************************************************/
+/***************** END UPDATE STATUS STYLING *******************/
+/*********************************************************/
+
