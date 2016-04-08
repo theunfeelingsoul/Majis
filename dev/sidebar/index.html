@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+
+<style type="text/css">
+	.side-bar-body a:hover{
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	.side-bar-body li{
+		border-bottom: solid 1px #EEEEEE;
+		/*border-top: solid 1px;*/
+		padding-top: 10px;
+		padding-bottom: 10px;
+		padding-left: 10px;
+		list-style: none;
+		color: #000;
+		    padding-left: 40px;
+
+	}
+	.side-bar-body li:hover{
+		background-color: #FAFAFA;
+	}
+
+	.side-bar-body ul{
+		padding-left: 0px;
+		margin-bottom: 0px;
+	}
+
+	#side-bar .panel-body{
+		padding-top: 0px;
+		padding-left: 0px;
+		padding-right: 0px;
+		padding-bottom: 0px;
+	}
+
+	#side-bar .panel{
+		border-radius: 0px;
+		margin-top: 0px;
+		border:none;
+		box-shadow: none;
+		-webkit-box-shadow:none;
+	}
+	#side-bar .panel-default{
+		border-radius: 0px;
+		margin-top: 0px;
+		border-color: transparent;
+	}
+
+	#side-bar .panel-heading{
+		background-color: #F5F5F5;
+		background-image: none;
+		border-radius: 0px;
+		border-bottom: solid 1px #EEEEEE;
+	}
+</style>
+<body>
+
+</body>
+</html>
+<div class="header">
+acasc
+</div>
+<div class="col-md-3" id="side-bar">
+	<div>
+		
+	</div>
+	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingOne">
+	      <h4 class="panel-title">
+	        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#x" aria-expanded="false" aria-controls="x">
+	         <span class="glyphicon glyphicon-th-large"> </span>&nbsp;&nbsp;Dashboard
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="x" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+	      <div class="panel-body side-bar-body">
+	      </div>
+	    </div>	
+	  </div>
+
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingOne">
+	      <h4 class="panel-title">
+	        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+	         <span class="glyphicon glyphicon-check"></span>&nbsp;&nbsp;Online Monitoring 
+	         </a>
+	      </h4>
+	    </div>
+	    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+	      <div class="panel-body side-bar-body">
+	        <ul>
+	        	<a href="">
+	        		<li>Incoming problems</li>
+	        	</a>
+	        	<a href="">
+	        		<li>Facilities</li>
+	        	</a>
+	        	<a href="">
+	        		<li>GPS Locations</li>
+	        	</a>
+	        </ul>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="panel panel-default">
+	    <div class="panel-heading" role="tab" id="headingTwo">
+	      <h4 class="panel-title">
+	        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+	          <span class="glyphicon glyphicon-tasks"></span>&nbsp;&nbsp;Reports
+	        </a>
+	      </h4>
+	    </div>
+	    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+	      <div class="panel-body side-bar-body">
+	        <ul>
+				<a href="">
+					<li>status of facilities</li>
+				</a>
+				<a href="">
+					<li>Comments of facilities</li>
+				</a>
+				<a href="">
+					<li>Number of problem reported</li>
+				</a>
+				<a href="">
+					<li>Type of problem reported</li>
+				</a>
+				<a href="">
+					<li>Community Contribution</li>
+				</a>
+	        </ul>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+</div>
+

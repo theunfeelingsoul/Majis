@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <?php
 	include 'database.php';
 
@@ -24,13 +23,7 @@
 
 </head>
 <body>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">WMOS</a>
-	    </div>
-	  </div><!-- /.container-fluid -->
-	</nav>
+	<?php include 'includes/_header.php'; ?>
 
 	<!-- side bar -->
 	<div class= "container-fluid">
@@ -81,6 +74,7 @@
 				</div> <!-- close .row -->
 			</div> <!-- close .col-md-10 -->
 		</div> <!--.row -->
+		 <?php include "includes/_footer.php"; ?>
 	</div>
    
       

@@ -1,3 +1,4 @@
+<?php include "includes/_sessions.php"; ?>
 <?php
   include 'database.php';
 
@@ -62,13 +63,7 @@
   <!-- ... -->
 
   <body>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">WMOS- Water Monitoring and Operation System</a>
-	    </div>
-	  </div><!-- /.container-fluid -->
-	</nav>
+	<?php include 'includes/_header.php'; ?>
 	<!-- side bar -->
 	<div class= "container-fluid">
 		<div class="row">
@@ -170,6 +165,7 @@
 			</div>
 		<!--.row -->
 		</div> 
+     <?php include "includes/_footer.php"; ?>
 	</div>
    
 	<!-- javascript links -->

@@ -1,3 +1,4 @@
+
 .h3{
 	font-size: 15px;
 }
@@ -30,12 +31,86 @@
 /*************** BEGIN SIDEBAR STYLING *******************/
 /*********************************************************/
 .sidebar{
-	background-color:#f5f5f5;
+	background-color:#00bcd4;
 	padding-left: 0px;
     padding-right: 0px;
     border-right: 1px solid #d8d7d7;
+    min-height: 100vh;
 
 }
+
+.side-bar-body a:hover{
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .side-bar-body li{
+        /*border-bottom: solid 1px #EEEEEE;*/
+        /*border-top: solid 1px;*/
+        padding-top: 10px;
+        padding-bottom: 10px;
+        /*padding-left: 10px;*/
+        list-style: none;
+        color: #fff;
+        padding-left: 40px;
+        background-color: #00bcd4;
+        font-weight: 500;
+
+    }
+    .side-bar-body li:hover{
+        background-color: #4dd0e1;
+    }
+
+    .side-bar-body .glyphicon{
+        /*font-size: 10px;*/
+        color: #fff;
+    }
+    #side-bar .glyphicon{
+        color: #fff;
+    }
+  
+
+    .side-bar-body ul{
+        padding-left: 0px;
+        margin-bottom: 0px;
+    }
+
+    #side-bar .panel-body{
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-bottom: 0px;
+    }
+
+    #side-bar .panel{
+        border-radius: 0px;
+        margin-top: 0px;
+        border:none;
+        box-shadow: none;
+        -webkit-box-shadow:none;
+    }
+
+    #side-bar .panel-title a{
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+    }
+    #side-bar .panel-default{
+        border-radius: 0px;
+        margin-top: 0px;
+        border-color: transparent;
+    }
+
+    #side-bar .panel-heading{
+        background-color: #00bcd4;
+        background-image: none;
+        border-radius: 0px;
+        border-bottom: none;
+    }
+
+    #page{
+        min-height: 80vh;
+    }
 
 /* 
  * all li have default padding we just put O to 
@@ -99,4 +174,125 @@ float: right;
 /*********************************************************/
 /***************** END UPDATE STATUS STYLING *******************/
 /*********************************************************/
+
+
+/*********************************************************/
+/***************** START FOOTER STYLING *******************/
+/*********************************************************/
+
+footer{
+    height: 50px;
+    border-top: solid 1px #cecece;
+}
+
+.copyright{
+	padding-top: 10px;	
+	text-align: center;
+	color: #337ab7;
+	font-weight: bold;
+	font-size: 14px;
+
+   /* margin: 0px auto;
+    width: 200px;*/
+}
+
+/*********************************************************/
+/***************** END FOOTER STYLING *******************/
+/*********************************************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Top Right Navigation Dropdown Styles */
+
+ .navbar-top-links li {
+    display: inline-block;
+}
+
+.navbar-top-links li:last-child {
+    margin-right: 15px;
+}
+
+.navbar-top-links li a {
+    padding: 15px;
+    /*border:1px solid #fff;*/
+    padding:2px 5px 2px 5px;
+    background-color:white;
+}
+
+.navbar-top-links .dropdown-menu li {
+    display: block;
+}
+
+.navbar-top-links .dropdown-menu li:last-child {
+    margin-right: 0;
+}
+
+.navbar-top-links .dropdown-menu li a {
+    padding: 3px 20px;
+    min-height: 0;
+}
+
+.navbar-top-links .dropdown-menu li a div {
+    white-space: normal;
+}
+
+.navbar-top-links .dropdown-messages,
+.navbar-top-links .dropdown-tasks,
+.navbar-top-links .dropdown-alerts {
+    width: 250px;
+    min-width: 0;
+}
+
+.navbar-top-links .dropdown-messages {
+    margin-left: 5px;
+}
+
+.navbar-top-links .dropdown-tasks {
+    margin-left: -59px;
+}
+
+.navbar-top-links .dropdown-alerts {
+    margin-left: -123px;
+}
+
+.navbar-top-links .dropdown-user {
+    right: 0;
+    left: auto;
+}
+
+
+
+
+
+@media(min-width:768px) {
+    .navbar-static-side {
+        z-index: 1;
+        position: absolute;
+        width: 250px;
+    }
+
+    .navbar-top-links .dropdown-messages,
+    .navbar-top-links .dropdown-tasks,
+    .navbar-top-links .dropdown-alerts {
+        margin-left: auto;
+    }
+}
+
+
+
+
+
 

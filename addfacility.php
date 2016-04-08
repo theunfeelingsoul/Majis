@@ -1,3 +1,4 @@
+<?php include "includes/_sessions.php"; ?>
 <?php
   include 'database.php';
 
@@ -13,14 +14,14 @@
   }
 
   //get facility type
-  $ft_sql = "SELECT * FROM facility_type";
+  $ft_sql = "SELECT * FROM faci_type";
 
   $ft_result = mysqli_query($conn, $ft_sql) or die(mysqli_error());
 
   while ($row = mysqli_fetch_assoc($ft_result)) {
     $ft_data[] = array(
                         'id' =>$row['id'] , 
-                        'facil_type' =>$row['facil_type'] , 
+                        'facil_type' =>$row['type'] , 
                     );
   }
 
@@ -74,13 +75,7 @@
   <!-- ... -->
 
   <body>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">WMOS- Water Monitoring and Operation System</a>
-	    </div>
-	  </div><!-- /.container-fluid -->
-	</nav>
+	<?php include 'includes/_header.php'; ?>
 	<!-- side bar -->
 	<div class= "container-fluid">
 		<div class="row">
@@ -221,6 +216,7 @@
 			</div>
 		<!--.row -->
 		</div> 
+     <?php include "includes/_footer.php"; ?>
 	</div>
    
 	<!-- javascript links -->

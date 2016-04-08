@@ -1,3 +1,4 @@
+<?php include "includes/_sessions.php"; ?>
 <?php
   include 'database.php';
 
@@ -8,21 +9,21 @@
   $prob_id  = $_GET['prob_id'];
 
   // get the facility details with the facility_no provided
-  $sql = "SELECT * FROM facilities WHERE facilities_no ='$id'";
+  $sql = "SELECT * FROM faci WHERE faci_num ='$id'";
 
   $result = mysqli_query($conn,$sql) or die(mysqli_error());
 
   while ($row = mysqli_fetch_assoc($result)) {  
     $data= array(
-      'region'         => $row['region'],
-      'lga'            => $row['lga'],
-      'ward'           => $row['ward'],
-      'facilities_no'    => $row['facilities_no'],
-      'facilities_name'  => $row['facilities_name'],
-      'facilities_type'  => $row['facilities_type'],
-      'com_name'       => $row['com_name'],
-      'com_contrib'    => $row['com_contrib'],
-      'source'         =>$row['source']
+      'region'       => $row['region'],
+      'lga'          => $row['lga'],
+      'ward'         => $row['ward'],
+      'faci_num'     => $row['faci_num'],
+      'faci_name'    => $row['faci_name'],
+      'faci_type'    => $row['faci_type'],
+      'com_name'     => $row['com_name'],
+      'com_contrib'  => $row['com_contrib'],
+      'source'       => $row['source']
     );
 
   }
@@ -33,7 +34,7 @@
   // gotten from the facility status table
   function getProb($p_id,$conn){
 
-    $prob_sql = "SELECT problems FROM sms WHERE id = '$p_id'";
+    $prob_sql = "SELECT problems FROM faci_problems WHERE id = '$p_id'";
     $prob_result = mysqli_query($conn,$prob_sql)or die(mysqli_error());
     while ($prob_row = mysqli_fetch_assoc($prob_result)) {
       return $f_prob = $prob_row['problems'];
@@ -45,14 +46,14 @@
 
 
   // get data/problems from sms table
-  $current_problem_sql = "SELECT problems FROM sms WHERE id ='$prob_id'";
+  $current_problem_sql = "SELECT problems FROM faci_problems WHERE id ='$prob_id'";
   $current_problem_result = mysqli_query($conn,$current_problem_sql) or die(mysqli_error());
   while ($current_problem_row = mysqli_fetch_assoc($current_problem_result)) {
     $current_problem_prob = $current_problem_row['problems'];
   }
 
   // get data from facility status, id comes from above
-  $f_status_sql = "SELECT * FROM facility_status WHERE f_no ='$id' ORDER BY id DESC";
+  $f_status_sql = "SELECT * FROM faci_status WHERE faci_num ='$id' ORDER BY id DESC";
   $f_status_result = mysqli_query($conn,$f_status_sql) or die(mysqli_error());
 
   // count rows
@@ -63,9 +64,9 @@
   if ($num_rows > 0) {
    while ($f_status_row = mysqli_fetch_assoc($f_status_result)) { 
       $f_status_data[] = array(
-            'f_no'            => $f_status_row['f_no'] , 
+            'faci_num'            => $f_status_row['faci_num'] , 
             'date_of_update'  => $f_status_row['date_of_update'] , 
-            'f_con'           => $f_status_row['f_con'] , 
+            'faci_con'           => $f_status_row['faci_con'] , 
             'comment'         => $f_status_row['comment'] , 
             'id'              => $f_status_row['id'] , 
             'problem'      => getProb($f_status_row['problem_id'],$conn) , 
@@ -83,14 +84,14 @@
   // insert into facility status
   if (isset($_POST['update_facility'])) {
       // get data from form input
-      $f_no               = $_GET['id'];
-      $date_of_update     = $_POST['date_of_update'];
-      $f_con              = $_POST['f_con'];
-      $comment            = $_POST['comment'];
-      $prob_id            = $_GET['prob_id'];
+      $faci_num                   = $_GET['id'];
+      $date_of_update         = $_POST['date_of_update'];
+      $faci_con               = $_POST['faci_con'];
+      $comment                = $_POST['comment'];
+      $prob_id                = $_GET['prob_id'];
 
-      $sql = "INSERT INTO facility_status (f_no,problem_id,f_con,comment,date_of_update)
-      VALUES('$f_no','$prob_id', '$f_con', '$comment', '$date_of_update') ";
+      $sql = "INSERT INTO faci_status (faci_num,problem_id,faci_con,comment,date_of_update)
+      VALUES('$faci_num','$prob_id', '$faci_con', '$comment', '$date_of_update') ";
 
       if (mysqli_query($conn,$sql)) {
         // reload page with same get variables as before
@@ -116,13 +117,7 @@
   <!-- ... -->
 
   <body>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">WMOS- Water Monitoring and Operation System</a>
-	    </div>
-	  </div><!-- /.container-fluid -->
-	</nav>
+	<?php include 'includes/_header.php'; ?>
 	<!-- side bar -->
 	<div class= "container-fluid">
 		<div class="row">
@@ -132,7 +127,7 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">
-              <h1 class=""><?php echo $data['facilities_name'] ?> Facility Status</h1><hr/>
+              <h1 class=""><?php echo $data['faci_name'] ?> Facility Status</h1><hr/>
             </div>
           </div>
           <div class="row">
@@ -143,7 +138,7 @@
                   <div class="panel-heading" role="tab" id="headingOne">
                     <h4 class="panel-title">
                       <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                        <?php echo $data['facilities_name'] ?> details
+                        <?php echo $data['faci_name'] ?> details
                       </a>
                     </h4>
                   </div>
@@ -170,15 +165,15 @@
                           </tr>
                           <tr>
                             <td>Facility no.</td>
-                            <td><?php echo $data['facilities_no'] ?></td>
+                            <td><?php echo $data['faci_num'] ?></td>
                           </tr>
                           <tr>
                             <td>Facility name</td>
-                            <td><?php echo $data['facilities_name'] ?></td>
+                            <td><?php echo $data['faci_name'] ?></td>
                           </tr>
                           <tr>
                             <td>Facility type</td>
-                            <td><?php echo $data['facilities_type'] ?></td>
+                            <td><?php echo $data['faci_type'] ?></td>
                           </tr>
                           <tr>
                             <td>Community name</td>
@@ -235,13 +230,13 @@
                               <!-- <div class="col-sm-6"> -->
                                   <div class="radio">
                                     <label>
-                                      <input type="radio" name="f_con" id="optionsRadios1" value="1" checked>
+                                      <input type="radio" name="faci_con" id="optionsRadios1" value="1" checked>
                                       Working
                                     </label>
                                   </div>  
                                   <div class="radio">
                                     <label>
-                                      <input type="radio" name="f_con" id="optionsRadios2" value="0">
+                                      <input type="radio" name="faci_con" id="optionsRadios2" value="0">
                                       Not Working
                                     </label>
                                   </div>
@@ -295,7 +290,7 @@
                         <tr>
                         <td class="col-md-2"><?php echo $f_status['date_of_update']  ?></td>
                         <td class="col-md-2"><?php echo $f_status['problem']  ?></td>
-                        <td class="col-md-1"><?php  echo $f_status['f_con'] == 1 ? '<span class="glyphicon glyphicon-ok-circle"></span>': '<span class="glyphicon glyphicon-remove-circle"></span>'; ?></td>
+                        <td class="col-md-1"><?php  echo $f_status['faci_con'] == 1 ? '<span class="glyphicon glyphicon-ok-circle"></span>': '<span class="glyphicon glyphicon-remove-circle"></span>'; ?></td>
                         <td class="col-md-3"><?php echo $f_status['comment']  ?></td>
                         </tr>
                   <?php endforeach;

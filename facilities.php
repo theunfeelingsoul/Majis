@@ -1,5 +1,8 @@
-
 <?php 
+
+// check if logged in
+session_start();
+include "includes/_permissions.php"; 
 
 // create my connection
 
@@ -73,13 +76,7 @@ if ($num_rows > 0) {
 
 </head>
 <body>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">WMOS- Water Monitoring and Operation System</a>
-	    </div>
-	  </div><!-- /.container-fluid -->
-	</nav>
+	<?php include 'includes/_header.php'; ?>
 
 	<!-- side bar -->
 	<div class= "container-fluid">
@@ -87,11 +84,15 @@ if ($num_rows > 0) {
 			<?php include "includes/_sidebar.php"; ?>
 
 			<div class="col-md-10">
-				<h3 class="page-header">Facilities <a href="addfacility.php"><span class="label label-default">Add new</span></a></h3>
+				<h3 class="page-header">Facilities 
+					<?php echo $_SESSION['role'] == 'user' ? '<span class="hidden">':'<span>'; ?>
+					<a href="addfacility.php"><span class="label label-default">Add new</span></a>
+					</span>
+				</h3>
 
 				<div class="row">
 					<div class="col-md-12">
-						<table class="hover row-border compact" id="facilities-table">
+						<table class="hover row-border compact" id="faci-table">
 		                    <thead>
 	                            <tr>
 		                            <th>Region</th>
@@ -103,7 +104,8 @@ if ($num_rows > 0) {
 									<th>Community Name</th>
 									<th>Community contribution</th>
 									<th>Source</th>
-									<th>Edit</th>
+									<?php echo $_SESSION['role'] == 'user' ? '<th class="hidden">':'<th>' ?>
+									Edit</th>
 	                            </tr>
 	                        </thead>
 	                        <tbody>
@@ -121,7 +123,8 @@ if ($num_rows > 0) {
 			                                <td><?php echo $value['com_name'] ?></td>
 											<td><?php echo $value['com_contrib'] ?></td>
 											<td><?php echo $value['source'] ?></td>
-											<td><a href="editfacility.php?id=<?php echo $value['id'] ?>">Edit</a></td>
+											<?php echo $_SESSION['role'] == 'user' ? '<td class="hidden">':'<td>'; ?>
+											<a href="editfacility.php?id=<?php echo $value['id'] ?>">Edit</a></td>
 			                             
 			                            </tr>
 
@@ -139,6 +142,7 @@ if ($num_rows > 0) {
 			</div>
 		<!--.row -->
 		</div> 
+		 <?php include "includes/_footer.php"; ?>
 	</div>
    
       

@@ -1,4 +1,7 @@
 <?php 
+// check if logged in
+session_start();
+include "includes/_permissions.php"; 
 
 // create my connection
 include 'database.php';
@@ -34,17 +37,11 @@ while ($row = mysqli_fetch_assoc($result)) {
 
 </head>
 <body>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">WMOS</a>
-	    </div>
-	  </div><!-- /.container-fluid -->
-	</nav>
+	<?php include 'includes/_header.php'; ?>
 
 	<!-- side bar -->
 	<div class= "container-fluid">
-		<div class="row">
+		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
 			<div class="col-md-10">
@@ -61,7 +58,9 @@ while ($row = mysqli_fetch_assoc($result)) {
 	                                <th>Problem(s)</th>
 	                                <th>COWSO/WUA Name</th>
 	                                <th>Status</th>
-	                                <th>Update Status</th>
+
+	                                <?php echo $_SESSION['role'] == 'user' ? '<th class="hidden">':'<th>' ?>
+	                                Update Status</th>
 	                            </tr>
 	                        </thead>
 	                        <tbody>
@@ -77,7 +76,8 @@ while ($row = mysqli_fetch_assoc($result)) {
 		                                <td><?php echo $value['problems'] ?></td>
 		                                <td><?php echo $value['com_name'] ?></td>
 		                                <td><?php echo $value['status'] == 0 ? 'Not working':'Working'; ?></td>
-		                                <td><a href="edit_facility_status.php?id=<?php echo $value['facility_number'] ?>&prob_id= <?php echo $value['id'] ?>"> Update Status</a></td>
+		                                <?php echo $_SESSION['role'] == 'user' ? '<td class="hidden">':'<td>' ?>
+		                                <a href="edit_facility_status.php?id=<?php echo $value['faci_num'] ?>&prob_id= <?php echo $value['id'] ?>"> Update Status</a></td>
 		                            </tr>
 
 	                            <?php   $i++;
@@ -92,6 +92,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 			</div>
 		<!--.row -->
 		</div> 
+		 <?php include "includes/_footer.php"; ?>
 	</div>
    
       

@@ -1,97 +1,112 @@
-<?php
-// require_once './library/config.php';
-// require_once './library/functions.php';
-
-// $errorMessage = '&nbsp;';
-
-// if (isset($_POST['txtUserName'])) {
-// 	$result = doLogin();
-	
-// 	if ($result != '') {
-// 		$errorMessage = $result;
-// 	}
-// }
-
-?>
+<!DOCTYPE html>
 <html>
 <head>
-<title>WMOS- Management System- Login</title>
-<!-- <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<link href="include/admin.css" rel="stylesheet" type="text/css">
-<link href="<?php echo WEB_ROOT;?>include/style.css" rel="stylesheet" type="text/css">
-<link href="<?php echo WEB_ROOT;?>include/main.css" rel="stylesheet" type="text/css"> -->
+	<title>login</title>
+	<!-- links css-->
+
+	<?php 
+		// include "includes/_sessions.php";
+		session_start();
+		if (isset($_SESSION['username'])) {
+			header("Location:index.php");
+			exit();
+		}
+
+		include 'database.php';
+		include 'functions/error_msg.func.php';
+		include "includes/_csslinks.php"; ?>
+
+	<style type="">
+	.center-block{
+		float: none;
+	}
+
+	.login{
+		padding-top: 200px;
+	}
+	</style>
+
+
+	<?php 
+		// instatiate the variable
+		$status = FALSE;
+
+		if (isset($_POST['login'])) {
+			$username 	=	$_POST['username'];
+			$pass 		=	$_POST['pass'];
+
+			// check if username and password exist
+			$sql="SELECT * FROM user WHERE username='$username' AND password='$pass' LIMIT 1";
+
+			// query table
+			if ($result = mysqli_query($conn,$sql)) {
+				
+				// countr rows
+				$row_cnt = mysqli_num_rows($result);
+
+				// if user exists log them in and redirect them to index page
+				if ($row_cnt==1) {
+					
+					// get role form table
+					while ($row = mysqli_fetch_assoc($result)) {
+		    			$role=$row['role'];
+					}
+
+					$_SESSION['username'] 	= $username ;
+					$_SESSION['role']   	= $role;
+
+					header("Location:index.php");
+					exit();
+				}else{
+					$status = "loginfail";
+					$error = "Username or password does not exist";
+				}
+
+			}else{
+				$status = "fail";
+		        $error = "Error: " . $sql . "<br>" . mysqli_error($conn);
+			}
+
+		}
+	 ?>
 </head>
 <body>
-  <!-- width="900" height="120" -->
-<br/>
-<br/>
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="1" class="graybox">
- <tr> 
-  <td><img src="image/favicon.jpg" width="500" height="100"></td>
- </tr>
- <tr> 
-  <td valign="top"> <table width="100%" border="0" cellspacing="0" cellpadding="20">
-    <tr> 
-     <td class="contentArea"> <form method="post" name="frmLogin" id="frmLogin">
-       <p>&nbsp;</p>
-       <table width="350" border="0" align="center" cellpadding="5" cellspacing="1" bgcolor="#336699" class="entryTable">
-        <tr id="entryTableHeader"> 
-         <td>:: User Login ::</td>
-        </tr>
-        <tr> 
-         <td class="contentArea"> 
-		 <!-- <div class="errorMessage" align="center"><?php echo $errorMessage; ?></div> -->
+<div class="container">
+	<div class="col-md-4 col-md-offset-4 login">
+		<h4>LOGIN</h4>
+		<form class="" action="" method="post">
+			<?php 
+				if (isset($loginfail)) {
+					echo $loginfail;
+				}
 
-		  <table width="100%" border="0" cellpadding="2" cellspacing="1" class="text">
-           <tr align="center"> 
-            <td colspan="3">&nbsp;</td>
-           </tr>
-           <tr class="text"> 
-            <td width="100" align="right">User Name</td>
-            <td width="10" align="center">:</td>
-            <td><input name="txtUserName" type="text" class="box" id="txtUserName"  size="30" maxlength="40"></td>
-           </tr>
-           <tr>
-             <td align="right">Password</td>
-             <td align="center">:</td>
-             <td><input name="txtPassword" type="password" class="box" id="txtPassword" size="30" maxlength="40"></td>
-           </tr>
-           <tr> 
-            <td width="100" align="right">User Type </td>
-            <td width="10" align="center">:</td>
-            <td><label>
-              <select name="utype" class="box">
-			  <option >&nbsp;&nbsp;--- Select User Type--- &nbsp;</option>
-			  <option value="admin">&nbsp;&nbsp; Administrator &nbsp;</option>
-			  <option value="customer">&nbsp;&nbsp;Engineer &nbsp;</option>
-			  <option value="employee">&nbsp;&nbsp;user &nbsp;</option>
-              </select>
-              </label></td>
-           </tr>
-           <tr>
-             <td colspan="2">&nbsp;</td>
-             <td>&nbsp;</td>
-           </tr>
-          <!--  <!-- <tr> -->
-             <!-- <td colspan="2">&nbsp;</td> -->
-             <!-- <td><div align="right">New Customer <a href="register.php">Register Here</a> </div></td> -->
-           <!-- </tr> --> -->
-           <!-- <tr> -->
-             <!-- <td colspan="3"><div align="right"><a href="forget-password.php">Forget Password</a> </div></td> -->
- <!-- </tr> -->
-           <!-- <tr>  -->
-            <td colspan="2">&nbsp;</td>
-            <td><input name="btnLogin" type="submit" id="btnLogin" value=" Login Now " style="font-size:14px;color:#0066FF;padding:5px 8px;"></td>
-           </tr>
-          </table></td>
-        </tr>
-       </table>
-       <p>&nbsp;</p>
-      </form></td>
-    </tr>
-   </table></td>
- </tr>
-</table>
-<!-- <p>Powered By: <a href="http://www.techzoo.org/">TechZoo - A Zoo of Technology</a></p> -->
+				if ($status=='fail') {
+					fail($error);
+				}
+
+				if ($status=='loginfail') {
+					fail($error);
+				}
+			?>
+		  <div class="form-group">
+		    <label for="">Username</label>
+		    <input type="text" name="username" class="form-control" id="" placeholder="username"
+		    	value="<?php if(isset($_POST['username'])){echo $_POST['username'];}else{echo "administrator";} ?>" >
+		  </div>
+		  <div class="form-group">
+		    <label for="">Password</label>
+		    <input type="password" name="pass" value="123" class="form-control" id="" placeholder="Password">
+		  </div>
+		  
+		  
+		  <button type="submit" name="login" class="btn btn-default">Login</button>
+		</form>
+		<br/>
+		<p>
+			Dont have an account? <a href="register.php">Register</a>
+		</p>
+	</div>
+	</div>
+
 </body>
 </html>
