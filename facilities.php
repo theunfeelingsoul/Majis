@@ -80,64 +80,66 @@ if ($num_rows > 0) {
 
 	<!-- side bar -->
 	<div class= "container-fluid">
-		<div class="row">
+		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
 			<div class="col-md-10">
-				<h3 class="page-header">Facilities 
+				<h2 class="page-title">Facilities 
 					<?php echo $_SESSION['role'] == 'user' ? '<span class="hidden">':'<span>'; ?>
 					<a href="addfacility.php"><span class="label label-default">Add new</span></a>
 					</span>
-				</h3>
+				</h2>
 
 				<div class="row">
 					<div class="col-md-12">
-						<table class="hover row-border compact" id="faci-table">
-		                    <thead>
-	                            <tr>
-		                            <th>Region</th>
-									<th>LGA</th>
-									<th>Ward</th>
-									<th>Facilities Number</th>
-									<th>Facilities Name</th>
-									<th>Facilities Type</th>
-									<th>Community Name</th>
-									<th>Community contribution</th>
-									<th>Source</th>
-									<?php echo $_SESSION['role'] == 'user' ? '<th class="hidden">':'<th>' ?>
-									Edit</th>
-	                            </tr>
-	                        </thead>
-	                        <tbody>
-	                            <?php 
-	                            	if ($data) {
-	                            	
-		                        		foreach ($data as $key => $value) {  ?>
-			                            <tr>
-			                                <td><?php echo $value['region'] ?></td>
-			                                <td><?php echo $value['lga'] ?></td>
-			                                <td><?php echo $value['ward'] ?></td>
-			                                <td><?php echo $value['faci_num'] ?></td>
-			                                <td><?php echo $value['faci_name'] ?></td>
-			                                <td><?php echo $value['faci_type'] ?></td>
-			                                <td><?php echo $value['com_name'] ?></td>
-											<td><?php echo $value['com_contrib'] ?></td>
-											<td><?php echo $value['source'] ?></td>
-											<?php echo $_SESSION['role'] == 'user' ? '<td class="hidden">':'<td>'; ?>
-											<a href="editfacility.php?id=<?php echo $value['id'] ?>">Edit</a></td>
-			                             
-			                            </tr>
-
+						<div class="white-data-table">
+							<table class="hover row-border compact" id="faci-table">
+			                    <thead>
+		                            <tr>
+			                            <th>Region</th>
+										<th>LGA</th>
+										<th>Ward</th>
+										<th>Facilities Number</th>
+										<th>Facilities Name</th>
+										<th>Facilities Type</th>
+										<th>Community Name</th>
+										<th>Community contribution</th>
+										<th>Source</th>
+										<?php echo $_SESSION['role'] == 'user' ? '<th class="hidden">':'<th>' ?>
+										Edit</th>
+		                            </tr>
+		                        </thead>
+		                        <tbody>
 		                            <?php 
+		                            	if ($data) {
+		                            	
+			                        		foreach ($data as $key => $value) {  ?>
+				                            <tr>
+				                                <td><?php echo $value['region'] ?></td>
+				                                <td><?php echo $value['lga'] ?></td>
+				                                <td><?php echo $value['ward'] ?></td>
+				                                <td><?php echo $value['faci_num'] ?></td>
+				                                <td><?php echo $value['faci_name'] ?></td>
+				                                <td><?php echo $value['faci_type'] ?></td>
+				                                <td><?php echo $value['com_name'] ?></td>
+												<td><?php echo $value['com_contrib'] ?></td>
+												<td><?php echo $value['source'] ?></td>
+												<?php echo $_SESSION['role'] == 'user' ? '<td class="hidden">':'<td>'; ?>
+												<a href="editfacility.php?id=<?php echo $value['id'] ?>">Edit</a></td>
+				                             
+				                            </tr>
 
-		                           	 	} // end foreach
+			                            <?php 
 
-		                           	} // end if
-	                             ?>
-	                        </tbody>
-	                    </table>
-					</div>
-				</div>
+			                           	 	} // end foreach
+
+			                           	} // end if
+		                             ?>
+		                        </tbody>
+		                    </table>
+						</div><!--/.white-data-table-->
+					</div><!--/.col-md-12-->
+				</div><!--/.row-->
 
 			</div>
 		<!--.row -->

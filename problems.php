@@ -45,49 +45,51 @@ while ($row = mysqli_fetch_assoc($result)) {
 			<?php include "includes/_sidebar.php"; ?>
 
 			<div class="col-md-10">
-				<h1 class="page-header">Incoming Problems</h1>
+				<h2 class="page-title">Incoming Problems</h2>
 
 				<div class="row">
 					<div class="col-md-12">
-						<table class="hover row-border compact" id="sms-table">
-		                    <thead>
-	                            <tr>
-	                                <th>ID</th>
-	                                <th>Facility Name</th>
-	                                <th>Facility Number</th>
-	                                <th>Problem(s)</th>
-	                                <th>COWSO/WUA Name</th>
-	                                <th>Status</th>
-
-	                                <?php echo $_SESSION['role'] == 'user' ? '<th class="hidden">':'<th>' ?>
-	                                Update Status</th>
-	                            </tr>
-	                        </thead>
-	                        <tbody>
-	                        	<?php 
-	                        		$i = 1;
-	                        		if ($data):
-		                        		foreach ($data as $key => $value):
-	                        	 ?>
+						<div class="white-data-table">
+							<table class="hover row-border compact" id="sms-table">
+			                    <thead>
 		                            <tr>
-		                                <td><?php echo $i ?></td>
-		                                <td><?php echo $value['faci_name'] ?></td>
-		                                <td><?php echo $value['faci_num'] ?></td>
-		                                <td><?php echo $value['problems'] ?></td>
-		                                <td><?php echo $value['com_name'] ?></td>
-		                                <td><?php echo $value['status'] == 0 ? 'Not working':'Working'; ?></td>
-		                                <?php echo $_SESSION['role'] == 'user' ? '<td class="hidden">':'<td>' ?>
-		                                <a href="edit_facility_status.php?id=<?php echo $value['faci_num'] ?>&prob_id= <?php echo $value['id'] ?>"> Update Status</a></td>
-		                            </tr>
+		                                <th>ID</th>
+		                                <th>Facility Name</th>
+		                                <th>Facility Number</th>
+		                                <th>Problem(s)</th>
+		                                <th>COWSO/WUA Name</th>
+		                                <th>Status</th>
 
-	                            <?php   $i++;
-										endforeach;
-		                           	endif;
-	                             ?>
-	                        </tbody>
-	                    </table>
-					</div>
-				</div>
+		                                <?php echo $_SESSION['role'] == 'user' ? '<th class="hidden">':'<th>' ?>
+		                                Update Status</th>
+		                            </tr>
+		                        </thead>
+		                        <tbody>
+		                        	<?php 
+		                        		$i = 1;
+		                        		if ($data):
+			                        		foreach ($data as $key => $value):
+		                        	 ?>
+			                            <tr>
+			                                <td><?php echo $i ?></td>
+			                                <td><?php echo $value['faci_name'] ?></td>
+			                                <td><?php echo $value['faci_num'] ?></td>
+			                                <td><?php echo $value['problems'] ?></td>
+			                                <td><?php echo $value['com_name'] ?></td>
+			                                <td><?php echo $value['status'] == 0 ? 'Not working':'Working'; ?></td>
+			                                <?php echo $_SESSION['role'] == 'user' ? '<td class="hidden">':'<td>' ?>
+			                                <a href="edit_facility_status.php?id=<?php echo $value['faci_num'] ?>&prob_id= <?php echo $value['id'] ?>"> Update Status</a></td>
+			                            </tr>
+
+		                            <?php   $i++;
+											endforeach;
+			                           	endif;
+		                             ?>
+		                        </tbody>
+		                    </table>
+						</div><!--/.white-data-table-->
+					</div><!--/.col-md-12-->
+				</div><!--/.row-->
 
 			</div>
 		<!--.row -->

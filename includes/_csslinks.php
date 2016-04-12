@@ -2,7 +2,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- links css-->
+	<!-- links css-->
+	<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/bootstrap/css/bootstrap-theme.min.css">
 	<link rel="stylesheet" type="text/css" href="styles/majismain.css">

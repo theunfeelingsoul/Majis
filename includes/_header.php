@@ -1,10 +1,10 @@
 <?php  //include "includes/_sessions.php"; ?>
-<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">WMOS- Water Monitoring and Operation System</a>
+<nav class="navbar navbar-default navbar-fixed-top" id="nav-boss">
+	<div class="container-fluid">
+	     <div class="col-md-2 row logo-box">
+	    	WMOS
 	    </div>
-
+	   
 
 	    <ul class="nav navbar-nav navbar-right">
 	    	<!-- <span class="glyphicon glyphicon-user"></span> -->

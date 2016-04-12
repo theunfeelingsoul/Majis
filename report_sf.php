@@ -15,15 +15,14 @@ include "includes/_permissions.php";
 
 	<!-- side bar -->
 	<div class= "container-fluid">
-		<div class="row">
+		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
 			<div class="col-md-10">
 				<div class="page-header">
-					<div class="page-header">
-						<h3 class="">Status of Facilities report</h3>
-						<h5 class="">Create report</h5>
-					</div>
+					<!-- <div class="page-header"> -->
+						<h2 class="page-title">Status of Facilities report</h2>
+					<!-- </div> -->
 
 					<form class="form-inline">
 					  <div class="form-group">
@@ -52,20 +51,22 @@ include "includes/_permissions.php";
 
 				<div class="row">
 					<div class="col-md-12">
-						<table class="hover row-border compact" id="faci-table">
-		                    <thead>
-	                            <tr>
-		                            <th>Region</th>
-									<th>LGA</th>
-									<th>Ward</th>
-									<th>Facilities Number</th>
-									<th>Facilities Name</th>
-	                            </tr>
-	                        </thead>
-	                        <tbody>
-	                        	
-	                        </tbody>
-	                    </table>
+						<div class="white-data-table">
+							<table class="hover row-border compact" id="faci-table">
+			                    <thead>
+		                            <tr>
+			                            <th>Region</th>
+										<th>LGA</th>
+										<th>Ward</th>
+										<th>Facilities Number</th>
+										<th>Facilities Name</th>
+		                            </tr>
+		                        </thead>
+		                        <tbody>
+		                        	
+		                        </tbody>
+		                    </table>
+						</div>
 					</div>
 				</div>
 

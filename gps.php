@@ -27,11 +27,11 @@
 
 	<!-- side bar -->
 	<div class= "container-fluid">
-		<div class="row">
+		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
 			<div class="col-md-10">
-				<h1 class="page-header"> GPS Locations</h1>
+				<h2 class="page-title"> GPS Locations</h2>
 
 				<div class="row">
 					<div class="col-md-8">

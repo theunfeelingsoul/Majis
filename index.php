@@ -22,7 +22,7 @@
 			<?php include "includes/_sidebar.php"; ?>
 
 			<div class="col-md-10">
-				<h1 class="page-header"> Dash Board</h1>
+				<h2 class="page-title"> Dash Board</h2>
 
 				<div class="row">
 					<div class="col-md-6">

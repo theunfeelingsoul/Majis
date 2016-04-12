@@ -1,4 +1,8 @@
-
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    color: #424242;
+}
 .h3{
 	font-size: 15px;
 }
@@ -14,12 +18,31 @@
 
 }
 
+.logo-box{
+    background-color: #8BC34A;
+    height: 64px;
+    width: 17%;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 14px 0px 0px 70px;
+    color: #fff;
+}
+
+
+
 .nav-sidebar .glyphicon{
 	padding-right:5px;
 }
 
 .navbar{
-	margin-bottom: 0px;
+	/*margin-bottom: 0px;*/
+        min-height: 64px;
+}
+
+.navbar-default{
+    background-image: none;
+    background-color: #FAFAFA;
+    border-radius: 0px;
 }
 
 /*********************************************************/
@@ -30,35 +53,32 @@
 /*********************************************************/
 /*************** BEGIN SIDEBAR STYLING *******************/
 /*********************************************************/
-.sidebar{
-	background-color:#00bcd4;
-	padding-left: 0px;
-    padding-right: 0px;
-    border-right: 1px solid #d8d7d7;
-    min-height: 100vh;
+    .sidebar{
+    	background-color:#26c6da;
+    	padding-left: 0px;
+        padding-right: 0px;
+        border-right: 1px solid #d8d7d7;
+        min-height: 100vh;
 
-}
+    }
 
-.side-bar-body a:hover{
+    .side-bar-body a:hover{
         cursor: pointer;
         text-decoration: none;
     }
 
     .side-bar-body li{
-        /*border-bottom: solid 1px #EEEEEE;*/
-        /*border-top: solid 1px;*/
         padding-top: 10px;
         padding-bottom: 10px;
-        /*padding-left: 10px;*/
         list-style: none;
         color: #fff;
         padding-left: 40px;
-        background-color: #00bcd4;
-        font-weight: 500;
+        background-color: #00acc1;
+        /*font-weight: 500;*/
 
     }
     .side-bar-body li:hover{
-        background-color: #4dd0e1;
+        background-color: #00bcd4;
     }
 
     .side-bar-body .glyphicon{
@@ -93,7 +113,8 @@
     #side-bar .panel-title a{
         color: #fff;
         text-decoration: none;
-        font-weight: 500;
+        font-size: 13px;
+        /*font-weight: 500;*/
     }
     #side-bar .panel-default{
         border-radius: 0px;
@@ -102,7 +123,7 @@
     }
 
     #side-bar .panel-heading{
-        background-color: #00bcd4;
+        background-color: #26c6da;
         background-image: none;
         border-radius: 0px;
         border-bottom: none;
@@ -110,6 +131,13 @@
 
     #page{
         min-height: 80vh;
+        margin-top: 64px;
+        background-color: #F1F1F1;
+        padding-bottom: 20px;
+    }
+
+    .page-title{
+        padding-bottom: 30px;
     }
 
 /* 
@@ -150,8 +178,14 @@ float: right;
 /***************** END MAP STYLING *******************/
 /*********************************************************/
 
-
-
+/*problem page*/
+.white-data-table{
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.12), 0px 1px 1px 0 rgba(0, 0, 0, 0.12) !important;
+     /*box-shadow: 10px 10px 5px #888888;*/
+     border-radius: 4px;
+}
 
 /*********************************************************/
 /***************** START UPDATE STATUS STYLING *******************/
