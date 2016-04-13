@@ -21,7 +21,7 @@
   while ($row = mysqli_fetch_assoc($ft_result)) {
     $ft_data[] = array(
                         'id' =>$row['id'] , 
-                        'facil_type' =>$row['type'] , 
+                        'faci_type' =>$row['type'] , 
                     );
   }
 
@@ -42,16 +42,16 @@
     $region         = $_POST['region'];
     $lga            = $_POST['lga'];
     $ward           = $_POST['ward'];
-    $facility_no    = $_POST['facilities_no'];
-    $facility_name  = $_POST['facilities_name'];
-    $facility_type  = $_POST['facilities_type'];
+    $faci_num       = $_POST['faci_num'];
+    $faci_name      = $_POST['faci_name'];
+    $faci_type      = $_POST['faci_type'];
     $com_name       = $_POST['com_name'];
     $com_contrib    = $_POST['com_contrib'];
     $source         = $_POST['source'];
 
 
-    $sql="INSERT INTO facilities (region, lga, ward, facilities_no, facilities_name, facilities_type, com_name, com_contrib, source) 
-    VALUES ('$region', '$lga', '$ward', '$facility_no', '$facility_name', '$facility_type', '$com_name', '$com_contrib', '$source')";
+    $sql="INSERT INTO faci (region, lga, ward, faci_num,  faci_name, faci_type, com_name, com_contrib, source) 
+    VALUES ('$region', '$lga', '$ward', '$faci_num', '$faci_name', '$faci_type', '$com_name', '$com_contrib', '$source')";
   
     if (mysqli_query($conn, $sql)) {
 
@@ -78,7 +78,7 @@
 	<?php include 'includes/_header.php'; ?>
 	<!-- side bar -->
 	<div class= "container-fluid">
-		<div class="row">
+		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 			<div class="col-md-8">
 				<h1 class="page-header">Add Facility</h1>
@@ -144,13 +144,13 @@
             <div class="form-group">
               <label class= "col-sm-2" control-label>Facility number:</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="facilities_no">
+                <input type="text" class="form-control" name="faci_num">
             </div>
             </div>
             <div class="form-group">
               <label class= "col-sm-2" control-label>Facility name: </label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="facilities_name" placeholder="facility name">
+                  <input type="text" class="form-control" name="  faci_name" placeholder="facility name">
                 </div>
             </div>
           
@@ -158,14 +158,14 @@
             <div class="form-group">
               <label class= "col-sm-2" control-label>Facility type:</label>
               <div class="col-sm-10">
-                  <select name="facilities_type" class="form-control">
+                  <select name="faci_type" class="form-control">
                     <option>Choose facility type</option>
                     <?php 
                       foreach ($ft_data as $value) {
 
                         ?>
 
-                          <option><?php echo $value['facil_type']; ?></option>
+                          <option><?php echo $value['faci_type']; ?></option>
 
                         <?php
                        

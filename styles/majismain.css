@@ -22,10 +22,22 @@ body{
     background-color: #8BC34A;
     height: 64px;
     width: 17%;
-    font-size: 25px;
-    font-weight: bold;
-    padding: 14px 0px 0px 70px;
+    padding-top: 5px;
+}
+
+.logo-box-title{
     color: #fff;
+    /*font-size: 13px;*/
+    font-weight: bold;
+    font-size: 25px;
+    padding-left: 55px;
+}
+
+.logo-box-name{
+    color: #fff;
+    font-size: 11px;
+    /*padding-left: 20px;*/
+    text-align: center;
 }
 
 
@@ -37,12 +49,32 @@ body{
 .navbar{
 	/*margin-bottom: 0px;*/
         min-height: 64px;
+        border: none;
 }
 
 .navbar-default{
     background-image: none;
     background-color: #FAFAFA;
     border-radius: 0px;
+}
+
+.navbar-default .navbar-nav>li>a {
+    color: #757575;
+    padding-top: 22px;
+}
+.navbar-default .navbar-nav .glyphicon {
+    font-size: 20px;
+}
+.navbar-default .navbar-nav .glyphicon-envelope {
+    z-index: -1;
+}
+
+.navbar-default .navbar-nav .badge {
+    font-size: 14px;
+    margin-top: -25px;
+    margin-left: -9px;
+    padding: 2px 5px;
+    background-color: #00BCD4;
 }
 
 /*********************************************************/
@@ -325,8 +357,15 @@ footer{
     }
 }
 
+/*FACILITIES*/
 
-
+.page-title .label-default{
+    background-color: #00bcd4;
+    /*font-size: 13px;*/
+}
+.page-title a{
+    font-size: 15px;
+}
 
 
 

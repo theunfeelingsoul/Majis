@@ -18,7 +18,7 @@ if (!$conn) {
 }
 
 // create sql statement
-$sql = "SELECT * FROM faci";
+$sql = "SELECT * FROM faci ORDER BY id DESC";
 // queried the database
 $result = mysqli_query($conn,$sql) or die (mysqli_error());
 

@@ -25,7 +25,7 @@ $u = getAll('user');
 
 	<!-- side bar -->
 	<div class= "container-fluid">
-		<div class="row">
+		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
 			<div class="col-md-10">

@@ -120,7 +120,7 @@
 	<?php include 'includes/_header.php'; ?>
 	<!-- side bar -->
 	<div class= "container-fluid">
-		<div class="row">
+		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
       
 			<div class="col-md-10">
@@ -135,14 +135,14 @@
               <!-- <span class="h3">Facility Details</span> -->
               <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
                 <div class="panel panel-default">
-                  <div class="panel-heading" role="tab" id="headingOne">
+                  <div class="panel-heading" role="tab" id="faci_detail_heading">
                     <h4 class="panel-title">
-                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      <a role="button" data-toggle="collapse" data-parent="#accordion" href="#faci_detail" aria-expanded="true" aria-controls="faci_detail">
                         <?php echo $data['faci_name'] ?> details
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                  <div id="faci_detail" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="faci_detail_heading">
                     <div class="panel-body">
                       
                        <table class="table-condensed table table-striped">
@@ -196,12 +196,12 @@
                 <div class="panel panel-default">
                   <div class="panel-heading" role="tab" id="headingTwo">
                     <h4 class="panel-title">
-                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#faci_update_form" aria-expanded="false" aria-controls="faci_update_form">
                         Status Update Form
                       </a>
                     </h4>
                   </div>
-                  <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                  <div id="faci_update_form" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                     <div class="panel-body">
                         <form id="update-facility-status-form" class="" method="POST" action="">
 
@@ -266,38 +266,40 @@
            
 
             <div class="col-md-7">
-              <h4>History of problems</h4><hr/>
-              <table  class="table table-condensed table-striped">
-                 <thead>
-                    <th>Date</th>
-                    <th>Problem</th>
-                    <th>Condition</th>
-                    <th>Comment</th>
-                  </thead>
-              </table>
-              <div class="history-problem-table">
-                <table class="table table-condensed table-striped">
-                 <!--  <thead>
-                    <th>Date</th>
-                    <th>Problem</th>
-                    <th>Condition</th>
-                    <th>Comment</th>
-                  </thead> -->
-                  <tbody>
-                 
-                  <?php if ($f_status_data):
-                        foreach ($f_status_data as $key => $f_status): ?>
-                        <tr>
-                        <td class="col-md-2"><?php echo $f_status['date_of_update']  ?></td>
-                        <td class="col-md-2"><?php echo $f_status['problem']  ?></td>
-                        <td class="col-md-1"><?php  echo $f_status['faci_con'] == 1 ? '<span class="glyphicon glyphicon-ok-circle"></span>': '<span class="glyphicon glyphicon-remove-circle"></span>'; ?></td>
-                        <td class="col-md-3"><?php echo $f_status['comment']  ?></td>
-                        </tr>
-                  <?php endforeach;
-                        endif; ?>
-
-                  </tbody>
+              <div class="white-data-table">
+                <h4>History of problems</h4><hr/>
+                <table  class="table table-condensed table-striped">
+                   <thead>
+                      <th>Date</th>
+                      <th>Problem</th>
+                      <th>Condition</th>
+                      <th>Comment</th>
+                    </thead>
                 </table>
+                <div class="history-problem-table">
+                  <table class="table table-condensed table-striped">
+                   <!--  <thead>
+                      <th>Date</th>
+                      <th>Problem</th>
+                      <th>Condition</th>
+                      <th>Comment</th>
+                    </thead> -->
+                    <tbody>
+                   
+                    <?php if ($f_status_data):
+                          foreach ($f_status_data as $key => $f_status): ?>
+                          <tr>
+                          <td class="col-md-2"><?php echo $f_status['date_of_update']  ?></td>
+                          <td class="col-md-2"><?php echo $f_status['problem']  ?></td>
+                          <td class="col-md-1"><?php  echo $f_status['faci_con'] == 1 ? '<span class="glyphicon glyphicon-ok-circle"></span>': '<span class="glyphicon glyphicon-remove-circle"></span>'; ?></td>
+                          <td class="col-md-3"><?php echo $f_status['comment']  ?></td>
+                          </tr>
+                    <?php endforeach;
+                          endif; ?>
+
+                    </tbody>
+                  </table>
+                </div>
               </div>
             </div>
           </div>

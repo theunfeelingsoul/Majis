@@ -13,7 +13,7 @@
 				<div class="panel-body side-bar-body"> </div>
 			</div>	
 		</div> <!--/.panel .panel-default-->
-
+		
 		<div class="panel panel-default">
 			<div class="panel-heading" role="tab" id="headingOne">
 				<h4 class="panel-title">
@@ -69,5 +69,19 @@
 				</div>
 			</div>
 		</div> <!--/.panel .panel-default-->
+		<div class="panel panel-default">
+			<div class="panel-heading" role="tab" id="headingOne">
+				<h4 class="panel-title">
+					<a role="button" data-toggle="collapse" data-parent="#accordion" href="#x" aria-expanded="false" aria-controls="x">
+					<span class="glyphicon glyphicon-th-large"> </span>&nbsp;&nbsp;<a href="users.php">Users</a>
+				</a>
+				</h4>
+			</div>
+			<div id="x" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+				<!-- dashboard lik has no data. Leave it like that -->
+				<div class="panel-body side-bar-body"> </div>
+			</div>	
+		</div> <!--/.panel .panel-default-->
+
 	</div> <!--/.accordion-->
 </div> <!-- .col-md-2.sidebar -->

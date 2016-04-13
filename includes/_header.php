@@ -1,17 +1,22 @@
 <?php  //include "includes/_sessions.php"; ?>
 <nav class="navbar navbar-default navbar-fixed-top" id="nav-boss">
 	<div class="container-fluid">
-	     <div class="col-md-2 row logo-box">
-	    	WMOS
-	    </div>
-	   
+		<div class="col-md-2 row logo-box">
+			<div class="logo-box-title">
+				WMOS
+			</div>
+			<div class="logo-box-name">
+				Water Monitoring and Opration System
+			</div>
+		</div>
+
 
 	    <ul class="nav navbar-nav navbar-right">
 	    	<!-- <span class="glyphicon glyphicon-user"></span> -->
 	    	<li>
 	    		<a href="">
-		    		<span class="badge">1</span>
 		    		<span class="glyphicon glyphicon-envelope"></span>
+		    		<span class="badge">1</span>
 	    		</a>
 	    	</li>
 			<li class="dropdown">

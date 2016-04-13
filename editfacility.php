@@ -31,20 +31,20 @@
     $region         = $_POST['region'];
     $lga            = $_POST['lga'];
     $ward           = $_POST['ward'];
-    $facility_no    = $_POST['faci_num'];
-    $facility_name  = $_POST['faci_name'];
-    $facility_type  = $_POST['faci_type'];
+    $faci_num       = $_POST['faci_num'];
+    $faci_name      = $_POST['faci_name'];
+    $faci_type      = $_POST['faci_type'];
     $com_name       = $_POST['com_name'];
     $com_contrib    = $_POST['com_contrib'];
     $source         = $_POST['source'];
 
     $sql = "UPDATE faci
-            SET region = '$region', lga = '$lga', ward = '$ward', faci_num = '$facility_no', faci_name = '$facility_name', faci_type = '$facility_type', com_name = '$com_name', com_contrib = '$com_contrib', source = '$source' 
+            SET region = '$region', lga = '$lga', ward = '$ward', faci_num = '$faci_num', faci_name = '$faci_name', faci_type = '$faci_type', com_name = '$com_name', com_contrib = '$com_contrib', source = '$source' 
             WHERE id='$id'";
 
   
     if (mysqli_query($conn, $sql)) {
-      $status = "success";
+      header("Location:editfacility.php?id=$id&status=success");
     } else {
         $status = "fail";
         $error = "Error: " . $sql . "<br>" . mysqli_error($conn);
@@ -66,14 +66,14 @@
 	<?php include 'includes/_header.php'; ?>
 	<!-- side bar -->
 	<div class= "container-fluid">
-		<div class="row">
+		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 			<div class="col-md-8">
 				<h1 class="page-header">Edit Facility</h1>
       		<form class="form-horizontal" method="POST" action="">
             <?php 
 
-              if ( isset($status) && $status =="success" ) {
+              if ( isset($_GET['status']) ) {
                 ?>
 
                   <div class="alert alert-success" role="alert">
@@ -118,14 +118,14 @@
             <div class="form-group">
               <label class= "col-sm-2" control-label>Facility number:</label>
               <div class="col-sm-10">
-              <input type="text" name="facilities_no" class="form-control" value="<?php echo $data['faci_num'] ?>" />
+              <input type="text" name="faci_num" class="form-control" value="<?php echo $data['faci_num'] ?>" />
 
               </div>
             </div>
             <div class="form-group">
               <label class= "col-sm-2" control-label>Facility name: </label>
                 <div class="col-sm-10">
-                   <input type="text" name="facilities_name" class="form-control" value="<?php echo $data['faci_name'] ?>" />
+                   <input type="text" name="faci_name" class="form-control" value="<?php echo $data['faci_name'] ?>" />
                 </div>
             </div>
           
@@ -133,7 +133,7 @@
             <div class="form-group">
               <label class= "col-sm-2" control-label>Facility type:</label>
               <div class="col-sm-10">
-                   <input type="text" name="facilities_type" class="form-control" value="<?php echo $data['faci_type'] ?>" />
+                   <input type="text" name="faci_type" class="form-control" value="<?php echo $data['faci_type'] ?>" />
               </div>
             </div>
              <div class="form-group">
