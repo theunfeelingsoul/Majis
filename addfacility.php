@@ -81,7 +81,7 @@
 		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 			<div class="col-md-8">
-				<h1 class="page-header">Add Facility</h1>
+				<h2 class="page-title">Add Facility</h2>
 
       		<form class="form-horizontal" method="POST" action="">
             <?php 
@@ -137,20 +137,20 @@
               <label class= "col-sm-2" control-label>Ward:</label>
               <div class="col-sm-10">
                   <select id="ward" name="ward" disabled="true" class="form-control">
-                    <option>select food</option>
+                    <option>Select food</option>
                   </select>
               </div>
             </div>
             <div class="form-group">
               <label class= "col-sm-2" control-label>Facility number:</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="faci_num">
+                <input type="text" class="form-control" name="faci_num" placeholder="Facility Number">
             </div>
             </div>
             <div class="form-group">
               <label class= "col-sm-2" control-label>Facility name: </label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="  faci_name" placeholder="facility name">
+                  <input type="text" class="form-control" name="  faci_name" placeholder="Facility name">
                 </div>
             </div>
           

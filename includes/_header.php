@@ -20,13 +20,26 @@
 	    		</a>
 	    	</li>
 			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-user"></span> <span class="caret"></span>
+				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+					<!-- <span class="glyphicon glyphicon-user"></span>  -->
+					<?php echo $_SESSION['username']; ?>
+					<span class="caret"></span>
 				</a>
 				
 				<ul class="dropdown-menu">
-					<li><a href="#"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;<?php echo $_SESSION['username'].' - '.$_SESSION['role'] ?></a></li>
+					<li>
+						<a href="#">
+							<!-- <span class="glyphicon glyphicon-user"></span> -->
+							&nbsp;&nbsp;Profile
+						</a>
+					</li>
 					<li role="separator" class="divider"></li>
-					<li><a href="logout.php"><span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;Log out</a></li>
+					<li>
+						<a href="logout.php">
+							<!-- <span class="glyphicon glyphicon-log-out"></span> -->
+							&nbsp;&nbsp;Log out
+						</a>
+					</li>
 				</ul>
 			</li>
 

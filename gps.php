@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php 
+		session_start();
+		include "includes/_permissions.php"; 
+	?>
 <?php
 	include 'database.php';
 
