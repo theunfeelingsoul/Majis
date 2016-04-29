@@ -3,19 +3,20 @@
 // check if logged in
 session_start();
 include "includes/_permissions.php"; 
+include "database.php"; 
 
 // create my connection
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "majis";
-// made connection
-$conn = mysqli_connect($servername,$username,$password,$dbname);
-// check connection
-if (!$conn) {
-	die(mysql_connection_error());
-}
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "majis";
+// // made connection
+// $conn = mysqli_connect($servername,$username,$password,$dbname);
+// // check connection
+// if (!$conn) {
+// 	die(mysql_connection_error());
+// }
 
 // create sql statement
 $sql = "SELECT * FROM faci ORDER BY id DESC";

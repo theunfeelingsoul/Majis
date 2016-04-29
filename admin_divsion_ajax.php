@@ -1,16 +1,17 @@
 <?php 
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "majis";
-// made connection
-$conn = mysqli_connect($servername,$username,$password,$dbname);
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $dbname = "majis";
+// // made connection
+// $conn = mysqli_connect($servername,$username,$password,$dbname);
 
-// check connection
-if (!$conn) {
-	die(mysql_connection_error());
-}
+// // check connection
+// if (!$conn) {
+// 	die(mysql_connection_error());
+// }
+include "database.php"; 
 
 // get LGAs
 if (isset($_GET['r'])) {
