@@ -54,7 +54,7 @@
 	// get the url
 	var urlstring = window.location.href;
 	// save the pages in an array
-	var pages = ['problems', 'facilities', 'gps', 'report_sf'];
+	var pages = ['problems', 'facilities', 'gps', 'report_sf','report_cf'];
 	// get the length of array
 	var arrayLength = pages.length;
 	// loop over the pages array
@@ -69,7 +69,7 @@
 
 				$('#collapseOne').addClass('in');
 			}
-			if (pages[i]=='report_sf' ) {
+			if (pages[i]=='report_sf' || pages[i]=='report_cf' ) {
 				$("#headingTwo .collapsed").attr("aria-expanded","true");
 
 				$('#collapseTwo').addClass('in');

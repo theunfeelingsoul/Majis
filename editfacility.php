@@ -18,7 +18,7 @@
       'faci_type'       => $row['faci_type'],
       'com_name'        => $row['com_name'],
       'com_contrib'     => $row['com_contrib'],
-      'source'          =>$row['source']
+      'source'          => $row['source']
     );
 
   }
@@ -39,8 +39,15 @@
     $source         = $_POST['source'];
 
     $sql = "UPDATE faci
-            SET region = '$region', lga = '$lga', ward = '$ward', faci_num = '$faci_num', faci_name = '$faci_name', faci_type = '$faci_type', com_name = '$com_name', com_contrib = '$com_contrib', source = '$source' 
-            WHERE id='$id'";
+            SET region      = '$region',
+                lga         = '$lga',
+                ward        = '$ward',
+                faci_num    = '$faci_num',
+                faci_name   = '$faci_name',
+                faci_type   = '$faci_type', com_name = '$com_name',
+                com_contrib = '$com_contrib',
+                source      = '$source' 
+            WHERE id = '$id'";
 
   
     if (mysqli_query($conn, $sql)) {

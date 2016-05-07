@@ -137,20 +137,20 @@
               <label class= "col-sm-2" control-label>Ward:</label>
               <div class="col-sm-10">
                   <select id="ward" name="ward" disabled="true" class="form-control">
-                    <option>Select food</option>
+                    <option>Select ward</option>
                   </select>
               </div>
             </div>
             <div class="form-group">
               <label class= "col-sm-2" control-label>Facility number:</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="faci_num" placeholder="Facility Number">
+                <input type="text" class="form-control" name="faci_num" placeholder="Facility Number" required>
             </div>
             </div>
             <div class="form-group">
               <label class= "col-sm-2" control-label>Facility name: </label>
                 <div class="col-sm-10">
-                  <input type="text" class="form-control" name="  faci_name" placeholder="Facility name">
+                  <input type="text" class="form-control" name="  faci_name" placeholder="Facility name" required>
                 </div>
             </div>
           
@@ -177,7 +177,7 @@
              <div class="form-group">
               <label class= "col-sm-2" control-label>Community Name:</label>
               <div class="col-sm-10">
-                <input type="text" class="form-control" name="com_name" placeholder="Community name">
+                <input type="text" class="form-control" name="com_name" placeholder="Community name" required>
               </div>
             </div>
              <div class="form-group">

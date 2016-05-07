@@ -84,14 +84,23 @@
   // insert into facility status
   if (isset($_POST['update_facility'])) {
       // get data from form input
-      $faci_num                   = $_GET['id'];
+      $faci_num               = $_GET['id'];
       $date_of_update         = $_POST['date_of_update'];
       $faci_con               = $_POST['faci_con'];
       $comment                = $_POST['comment'];
       $prob_id                = $_GET['prob_id'];
 
-      $sql = "INSERT INTO faci_status (faci_num,problem_id,faci_con,comment,date_of_update)
-      VALUES('$faci_num','$prob_id', '$faci_con', '$comment', '$date_of_update') ";
+      $sql = "INSERT INTO faci_status (
+                          faci_num,
+                          problem_id,
+                          faci_con,
+                          comment,
+                          date_of_update)
+              VALUES( '$faci_num',
+                      '$prob_id',
+                      '$faci_con',
+                      '$comment',
+                      '$date_of_update') ";
 
       if (mysqli_query($conn,$sql)) {
         // reload page with same get variables as before
@@ -206,7 +215,7 @@
                         <form id="update-facility-status-form" class="" method="POST" action="">
 
                           <!-- hidden input to collect the date -->
-                          <input type="hidden" name="date_of_update" value="<?php echo date("d-m-Y");  ?>" />
+                          <input type="hidden" name="date_of_update" value="<?php echo time();  ?>" />
 
                           <p>Problem : <?php echo $current_problem_prob; ?></p>
                           <?php if ( isset($status) && $status =="success" ): ?>
@@ -245,7 +254,7 @@
                             <div class="form-group">
                               <label class= "control-label" >comment:</label>
                               <!-- <div class="col-sm-6"> -->
-                                  <textarea name="comment" rows="5" cols="6" class="form-control"></textarea>
+                                  <textarea name="comment" rows="5" cols="6" class="form-control" required ></textarea>
                               <!-- </div> -->
                             </div>
                             

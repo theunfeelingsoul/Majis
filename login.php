@@ -59,7 +59,7 @@
 					exit();
 				}else{
 					$status = "loginfail";
-					$error = "Username or password does not exist";
+					$error = "Username or password is incorrect";
 				}
 
 			}else{

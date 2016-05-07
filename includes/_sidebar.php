@@ -53,7 +53,7 @@
 						<a href="report_sf.php">
 							<li>status of facilities</li>
 						</a>
-						<a href="">
+						<a href="report_cf.php">
 							<li>Comments of facilities</li>
 						</a>
 						<a href="">
