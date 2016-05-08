@@ -177,8 +177,12 @@ body{
     }
 
     .page-title{
-        padding-bottom: 30px;
+        /*padding-bottom: 30px;*/
+        font-size: 30px;
+        /*border-bottom: solid 1px #c5c5c5;*/
     }
+
+    /*.page-title*/
 
 /* 
  * all li have default padding we just put O to 

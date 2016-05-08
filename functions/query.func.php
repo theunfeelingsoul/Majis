@@ -30,6 +30,21 @@ function getWhere($table,$where,$value){
 	return $data;
 }
 
+// select single column value
+function getSingle($table,$column,$where,$value){
+	global $conn;
+	$sql = "SELECT $column FROM $table WHERE $where = '$value' LIMIT 0,1";
+
+	$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+	$data =FALSE;
+	while ($row = mysqli_fetch_assoc($result)) {  
+		$v = $row[$column];
+	}
+
+
+	return $v;
+}
+
 
 
  ?>

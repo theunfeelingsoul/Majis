@@ -2,6 +2,41 @@
 // check if logged in
 session_start();
 include "includes/_permissions.php"; 
+include 'database.php';
+include 'functions/query.func.php';
+
+// get the form data
+$data = false;
+if (isset($_POST['report_submit'])) {
+
+	// change the string date to unixtime
+	$frm_date 		= strtotime($_POST['frm_date']);
+	$to_date 		= strtotime($_POST['to_date']);
+	$faci_status 	= $_POST['faci_status'];
+
+	$sql = "SELECT * FROM faci_status WHERE date_of_update BETWEEN '$frm_date' AND '$to_date' AND faci_con='$faci_status' GROUP BY faci_num";
+
+	$result = mysqli_query($conn,$sql) or die(mysqli_error());
+	while ($row = mysqli_fetch_assoc($result)) {  
+
+		$data[]= array(
+			'region'		=> getSingle('faci','region','faci_num',$row['faci_num']),
+			'lga'			=> getSingle('faci','lga','faci_num',$row['faci_num']),
+			'ward'			=> getSingle('faci','ward','faci_num',$row['faci_num']),
+			'faci_num'		=> getSingle('faci','faci_num','faci_num',$row['faci_num']),
+			'faci_name'		=> getSingle('faci','faci_name','faci_num',$row['faci_num']),
+			'date_of_update'=> $row['date_of_update'],
+			'faci_con'=> $row['faci_con'],
+		);
+
+	}
+
+	// echo "<pre>";
+	// print_r($data);
+	// echo "</pre>";
+	// echo $timestamp = strtotime($_POST['frm_date']);
+	// exit();
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -21,30 +56,30 @@ include "includes/_permissions.php";
 			<div class="col-md-10">
 				<div class="page-header">
 					<!-- <div class="page-header"> -->
-						<h2 class="page-title">Status of Facilities report</h2>
+						<div class="page-title">Status of Facilities report</div>
+						<p>Shows a list of facilities by status</p>
+						<hr/>
+						<!-- <div class="alert alert-info" role="alert">...</div> -->
 					<!-- </div> -->
 
-					<form class="form-inline">
+					<form class="form-inline" action="" method="post">
 					  <div class="form-group">
 					    <label class="sr-only" for="exampleInputEmail3">From</label>
-					    <input type="text"  class="datepicker form-control" id="" placeholder="From">
+					    <input type="text"  name="frm_date" class="datepicker form-control" id="" placeholder="From" required>
 					  </div>
 					  <div class="form-group">
-					    <label class="sr-only" for="exampleInputPassword3">To</label>
-					    <input type="text" class="datepicker form-control" id="exampleInputPassword3" placeholder="To">
+					    <label class="sr-only" for="">To</label>
+					    <input type="text" name="to_date" class="datepicker form-control" id="" placeholder="To" required>
 					  </div>
 					  <div class="form-group">
 					    <label class="sr-only" for="">Status</label>
-					    <select class="form-control">
-						  <option>Choose status</option>
-						  <option>Working</option>
-						  <option>Not working</option>
-						  <option>3</option>
-						  <option>4</option>
-						  <option>5</option>
+					    <select class="form-control" name="faci_status" required>
+						  <option value="">Choose status</option>
+						  <option value="1">Working</option>
+						  <option value="0">Not working</option>
 						</select>
 					  </div>
-					  <button type="submit" class="btn btn-default">Create report</button>
+					  <button type="submit" name="report_submit" class="btn btn-default">Create report</button>
 					</form>
 				</div>
 				
@@ -55,6 +90,7 @@ include "includes/_permissions.php";
 							<table class="hover row-border compact" id="faci-table">
 			                    <thead>
 		                            <tr>
+			                            <th>Status</th>
 			                            <th>Region</th>
 										<th>LGA</th>
 										<th>Ward</th>
@@ -63,7 +99,18 @@ include "includes/_permissions.php";
 		                            </tr>
 		                        </thead>
 		                        <tbody>
-		                        	
+		                        	<?php if($data):?>
+		                        		<?php foreach ($data as $key => $value):?>
+				                        		<tr>
+				                        			<td><?php echo $value['faci_con'] == 1? 'Working':'Not working'?></td>
+				                        			<td><?php echo $value['region'] ?></td>
+				                        			<td><?php echo $value['lga'] ?></td>
+				                        			<td><?php echo $value['ward'] ?></td>
+				                        			<td><?php echo $value['faci_num'] ?></td>
+				                        			<td><?php echo $value['faci_name'] ?></td>
+				                        		</tr>
+		                        	<?php endforeach; ?>
+		                        	<?php endif; ?>
 		                        </tbody>
 		                    </table>
 						</div>

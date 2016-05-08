@@ -54,7 +54,7 @@
 							<li>status of facilities</li>
 						</a>
 						<a href="report_cf.php">
-							<li>Comments of facilities</li>
+							<li>Problem remarks</li>
 						</a>
 						<a href="">
 							<li>Number of problem reported</li>
