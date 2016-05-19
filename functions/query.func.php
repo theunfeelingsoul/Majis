@@ -36,7 +36,7 @@ function getSingle($table,$column,$where,$value){
 	$sql = "SELECT $column FROM $table WHERE $where = '$value' LIMIT 0,1";
 
 	$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
-	$data =FALSE;
+	$v =FALSE;
 	while ($row = mysqli_fetch_assoc($result)) {  
 		$v = $row[$column];
 	}

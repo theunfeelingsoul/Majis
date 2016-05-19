@@ -35,7 +35,7 @@
 			<?php include "includes/_sidebar.php"; ?>
 
 			<div class="col-md-10">
-				<h2 class="page-title"> GPS Locations</h2>
+				<h2 class="page-title"> Facility Location</h2>
 
 				<div class="row">
 					<div class="col-md-8">

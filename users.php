@@ -33,12 +33,11 @@ $u = getAll('user');
 
 				<div class="row">
 					<div class="col-md-12">
-						<table class="hover row-border compact" id="sms-table">
+						<table class="display compact" id="sms-table">
 		                    <thead>
 	                            <tr>
 	                                <th>ID</th>
 	                                <th>Username</th>
-	                                <th>Password</th>
 	                                <th>Role</th>
 	                            </tr>
 	                        </thead>
@@ -51,7 +50,7 @@ $u = getAll('user');
 		                            <tr>
 		                                <td><?php echo $i++ ?></td>
 		                                <td><?php echo $user['username'] ?></td>
-		                                <td><?php echo $user['password'] ?></td>
+		                               
 		                                <td><?php echo $user['role'] ?></td>
 		                            </tr>
 

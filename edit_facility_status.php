@@ -298,7 +298,7 @@
                     <?php if ($f_status_data):
                           foreach ($f_status_data as $key => $f_status): ?>
                           <tr>
-                          <td class="col-md-2"><?php echo $f_status['date_of_update']  ?></td>
+                          <td class="col-md-2"><?php echo date('d-m-Y',$f_status['date_of_update'])  ?></td>
                           <td class="col-md-2"><?php echo $f_status['problem']  ?></td>
                           <td class="col-md-1"><?php  echo $f_status['faci_con'] == 1 ? '<span class="glyphicon glyphicon-ok-circle"></span>': '<span class="glyphicon glyphicon-remove-circle"></span>'; ?></td>
                           <td class="col-md-3"><?php echo $f_status['comment']  ?></td>

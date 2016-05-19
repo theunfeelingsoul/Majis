@@ -25,7 +25,7 @@
 		if (isset($_POST['register'])) {
 			$username 	=	$_POST['username'];
 			$pass 		=	$_POST['pass'];
-			$role 		=	$_POST['role'];
+			$role 		=	'user';
 
 			// check if user exists
 			$check_user_sql="SELECT * FROM user WHERE username='$username'";
@@ -89,7 +89,7 @@
 		    <label for="">Password</label>
 		    <input type="password" name="pass" class="form-control" id="" placeholder="Password" pattern=".{3,}"  title="3 characters minimum" required>
 		  </div>
-		  <div class="form-group">
+		  <!-- <div class="form-group">
 		    <label for="">Role</label>
 		    <select class="form-control" name="role">
 			  <option value="user">Choose Role</option>
@@ -98,7 +98,7 @@
 			  <option value="user">User</option>
 			</select>
 
-		  </div>
+		  </div> -->
 		  
 		  
 		  <button type="submit" name="register" class="form-control btn btn-primary">Register</button>

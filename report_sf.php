@@ -7,6 +7,9 @@ include 'functions/query.func.php';
 
 // get the form data
 $data = false;
+$frm_date ="";
+$to_date="";
+$faci_status="";
 if (isset($_POST['report_submit'])) {
 
 	// change the string date to unixtime
@@ -36,6 +39,9 @@ if (isset($_POST['report_submit'])) {
 	// echo "</pre>";
 	// echo $timestamp = strtotime($_POST['frm_date']);
 	// exit();
+
+
+
 }
 ?>
 <!DOCTYPE html>
@@ -58,6 +64,12 @@ if (isset($_POST['report_submit'])) {
 					<!-- <div class="page-header"> -->
 						<div class="page-title">Status of Facilities report</div>
 						<p>Shows a list of facilities by status</p>
+						<?php 
+							echo $frm_date;echo "</br>";
+echo $to_date;echo "</br>";
+echo $faci_status;echo "</br>";
+
+	 ?>
 						<hr/>
 						<!-- <div class="alert alert-info" role="alert">...</div> -->
 					<!-- </div> -->
@@ -65,21 +77,25 @@ if (isset($_POST['report_submit'])) {
 					<form class="form-inline" action="" method="post">
 					  <div class="form-group">
 					    <label class="sr-only" for="exampleInputEmail3">From</label>
-					    <input type="text"  name="frm_date" class="datepicker form-control" id="" placeholder="From" required>
+					    <input type="text"  name="frm_date" class="datepicker form-control" id="" placeholder="From" value="<?php echo $frm_date ==''?'':date('m/d/Y',$frm_date) ?>" required>
 					  </div>
 					  <div class="form-group">
 					    <label class="sr-only" for="">To</label>
-					    <input type="text" name="to_date" class="datepicker form-control" id="" placeholder="To" required>
+					    <input type="text" name="to_date" class="datepicker form-control" id="" placeholder="To" value="<?php echo $to_date ==''?'':date('m/d/Y',$to_date) ?>" required>
 					  </div>
 					  <div class="form-group">
 					    <label class="sr-only" for="">Status</label>
 					    <select class="form-control" name="faci_status" required>
-						  <option value="">Choose status</option>
-						  <option value="1">Working</option>
-						  <option value="0">Not working</option>
+						  <option value="" >Choose status</option>
+						  <option value="1" <?php echo $faci_status =='1'?'selected':'' ?>>Working</option>
+						  <option value="0" <?php echo $faci_status =='0'?'selected':'' ?>>Not working</option>
 						</select>
 					  </div>
 					  <button type="submit" name="report_submit" class="btn btn-default">Create report</button>
+					   <div class="form-group">
+					    <label class="sr-only" for="">Status</label>
+					    <a href="pdf_status_report.php?<?php echo "frm_date=$frm_date&to_date=$to_date& faci_status=$faci_status" ?>" target="_blank">Create PDF</a>
+					  </div>
 					</form>
 				</div>
 				

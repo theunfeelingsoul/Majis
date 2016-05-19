@@ -32,7 +32,7 @@
 							<li>Facilities</li>
 						</a>
 						<a href="gps.php">
-							<li>GPS Locations</li>
+							<li>Facility Location</li>
 						</a>
 					</ul>
 				</div>
@@ -59,12 +59,12 @@
 						<a href="">
 							<li>Number of problem reported</li>
 						</a>
-						<a href="">
+						<!-- <a href="">
 							<li>Type of problem reported</li>
 						</a>
 						<a href="">
 							<li>Community Contribution</li>
-						</a>
+						</a> -->
 					</ul>
 				</div>
 			</div>
