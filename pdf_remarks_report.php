@@ -72,16 +72,6 @@ if (isset($_GET['frm_date']) && isset($_GET['to_date']) && isset($_GET['faci_sta
 	// extend TCPF with custom functions
 	class MYPDF extends TCPDF {
 
-		// Load table data from file
-		// public function LoadData($file) {
-		// 	// Read file lines
-		// 	$lines = file($file);
-		// 	$data = array();
-		// 	foreach($lines as $line) {
-		// 		$data[] = explode(';', chop($line));
-		// 	}
-		// 	return $data;
-		// }
 
 		//Page header
 	public function Header() {
@@ -100,9 +90,9 @@ if (isset($_GET['frm_date']) && isset($_GET['to_date']) && isset($_GET['faci_sta
 		// Colored table
 		public function ColoredTable($header,$data) {
 			// Colors, line width and bold font
-			$this->SetFillColor(255, 0, 0);
+			$this->SetFillColor(117,117,117);
 			$this->SetTextColor(255);
-			$this->SetDrawColor(128, 0, 0);
+			$this->SetDrawColor(78,52,46);
 			$this->SetLineWidth(0.3);
 			$this->SetFont('', 'B');
 			// Header
@@ -125,7 +115,7 @@ if (isset($_GET['frm_date']) && isset($_GET['to_date']) && isset($_GET['faci_sta
 				$this->Cell($w[2], 6, $row['ward'], 'LR', 0, 'L', $fill);
 				$this->Cell($w[3], 6, $row['faci_num'], 'LR', 0, 'L', $fill);
 				$this->Cell($w[4], 6, $row['faci_name'], 'LR', 0, 'L', $fill);
-				$this->Cell($w[5], 6, date('j - d - Y',$row['date_of_update']), 'LR', 0, 'L', $fill);
+				$this->Cell($w[5], 6, date('d - m - Y',$row['date_of_update']), 'LR', 0, 'L', $fill);
 				$this->Cell($w[6], 6, $row['problem'], 'LR', 0, 'L', $fill);
 				$this->MultiCell($w[7], 6, $row['comment'], 0, 'L', $fill, 0, '', '', true, 0, false, true, 40, 'T');
 				// $this->Cell($w[5], 6, $row['date_of_update'], 'LR', 0, 'L', $fill);

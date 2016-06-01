@@ -84,9 +84,9 @@ if (isset($_POST['report_submit'])) {
 						</select>
 					  </div>
 					  <button type="submit" name="report_submit" class="btn btn-default">Create report</button>
-					  <div class="form-group">
+					  <div class="form-group pdf_report_cf_link">
 					    <label class="sr-only" for="">Status</label>
-					    <a href="pdf_remarks_report.php?<?php echo "frm_date=$frm_date&to_date=$to_date& faci_status=$faci_status" ?>" target="_blank">Create PDF</a>
+					    <a <?= $frm_date == ""?'disabled="disabled" onclick="return false"':''; ?> class="btn btn-primary" href="pdf_remarks_report.php?<?php echo "frm_date=$frm_date&to_date=$to_date& faci_status=$faci_status" ?>" target="_blank">Create PDF</a>
 					  </div>
 					</form>
 				</div>
@@ -117,7 +117,7 @@ if (isset($_POST['report_submit'])) {
 				                        			<td><?php echo $value['ward'] ?></td>
 				                        			<td><?php echo $value['faci_num'] ?></td>
 				                        			<td><?php echo $value['faci_name'] ?></td>
-				                        			<td><?php echo date('j - d - Y',$value['date_of_update']) ?></td>
+				                        			<td><?php echo date('d - m - Y',$value['date_of_update']) ?></td>
 				                        			<td><?php echo $value['problem'] ?></td>
 				                        			<td><?php echo $value['comment'] ?></td>
 				                        		</tr>

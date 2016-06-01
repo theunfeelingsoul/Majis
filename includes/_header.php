@@ -15,8 +15,8 @@
 	    	<!-- <span class="glyphicon glyphicon-user"></span> -->
 	    	<li>
 	    		<a href="">
-		    		<span class="glyphicon glyphicon-envelope"></span>
-		    		<span class="badge">1</span>
+		    		<!-- <span class="glyphicon glyphicon-envelope"></span>
+		    		<span class="badge">1</span> -->
 	    		</a>
 	    	</li>
 			<li class="dropdown">

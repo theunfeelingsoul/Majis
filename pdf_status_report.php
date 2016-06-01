@@ -100,9 +100,9 @@ if (isset($_GET['frm_date']) && isset($_GET['to_date']) && isset($_GET['faci_sta
 		// Colored table
 		public function ColoredTable($header,$data) {
 			// Colors, line width and bold font
-			$this->SetFillColor(255, 0, 0);
+			$this->SetFillColor(117,117,117);
 			$this->SetTextColor(255);
-			$this->SetDrawColor(128, 0, 0);
+			$this->SetDrawColor(78,52,46);
 			$this->SetLineWidth(0.3);
 			$this->SetFont('', 'B');
 			// Header

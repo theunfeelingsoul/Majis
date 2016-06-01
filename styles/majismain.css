@@ -1,6 +1,6 @@
 body{
     font-family: 'Roboto', sans-serif;
-    font-size: 14px;
+    font-size: 16px;
     color: #424242;
 }
 .h3{
@@ -153,7 +153,7 @@ body{
     #side-bar .panel-title a{
         color: #fff;
         text-decoration: none;
-        font-size: 13px;
+        /*font-size: 13px;*/
         /*font-weight: 500;*/
     }
     #side-bar .panel-default{
@@ -379,5 +379,25 @@ footer{
     font-size: 15px;
 }
 
+
+/*report sf*/
+.pdf_report_sf_link,.pdf_report_cf_link{
+    float: right;
+}
+
+
+/*dasboard*/
+#dashboard-box{
+    background-color: #fff;
+    padding: 10px;
+    border-color: #d2d2d2;
+    box-shadow: 0 1px 0 #cfcfcf;
+    /*border-radius: 3px;*/         
+}
+
+.dash-row{
+    margin-top: 20px;   
+    margin-right: 5px;
+}
 
 

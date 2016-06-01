@@ -72,11 +72,11 @@ while ($row = mysqli_fetch_assoc($result)) {
 		                        	 ?>
 			                            <tr>
 			                                <td><?php echo $i ?></td>
-			                                <td><?php echo $value['faci_name'] ?></td>
-			                                <td><?php echo $value['faci_num'] ?></td>
+			                                <td><?php echo $value['faci_name'] == ''? '<span class="label label-info">N/A</span>': $value['faci_name'] ?></td>
+			                                <td><?php echo $value['faci_num'] == ''? '<span class="label label-info">N/A</span>': $value['faci_num'] ?></td>
 			                                <td><?php echo $value['problems'] ?></td>
-			                                <td><?php echo $value['com_name'] ?></td>
-			                                <td><?php echo $value['status'] == 0 ? 'Not working':'Working'; ?></td>
+			                                <td><?php echo $value['com_name'] == ''? '<span class="label label-info">N/A</span>': $value['com_name'] ?></td>
+			                                <td><?php echo $value['status'] == 0 ? ' <span class="label label-danger">Not working</span>':'<span class="label label-success">Working</span>'; ?></td>
 			                                <?php echo $_SESSION['role'] == 'user' ? '<td class="hidden">':'<td>' ?>
 			                                <a href="edit_facility_status.php?id=<?php echo $value['faci_num'] ?>&prob_id= <?php echo $value['id'] ?>"> Update Status</a></td>
 			                            </tr>

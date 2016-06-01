@@ -90,6 +90,28 @@
       $comment                = $_POST['comment'];
       $prob_id                = $_GET['prob_id'];
 
+
+
+      // check if condition is working i.e 1
+      // then update faci_problems table
+      if ($faci_con == 1):
+        $sql_update="UPDATE faci_problems SET status=1 WHERE id='$prob_id'";
+        if (mysqli_query($conn, $sql_update)) {
+            echo "Record updated successfully";
+        } else {
+            echo "Error updating record: " . mysqli_error($conn);
+        }
+      elseif ($faci_con == 0):
+        $sql_update="UPDATE faci_problems SET status=0 WHERE id='$prob_id'";
+        if (mysqli_query($conn, $sql_update)) {
+            echo "Record updated successfully";
+        } else {
+            echo "Error updating record: " . mysqli_error($conn);
+        }
+      endif;
+
+      // exit();
+
       $sql = "INSERT INTO faci_status (
                           faci_num,
                           problem_id,

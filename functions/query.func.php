@@ -30,6 +30,27 @@ function getWhere($table,$where,$value){
 	return $data;
 }
 
+//count * from table where
+function countWhere($table,$where,$value){
+	global $conn;
+	$sql = "SELECT count(*) AS countable FROM $table WHERE $where = '$value'";
+
+	$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+	$row = mysqli_fetch_assoc($result);
+	return $row['countable'];
+}
+
+//count * from table
+function countAll($table){
+	global $conn;
+	$sql = "SELECT count(*) AS countable FROM $table";
+
+	$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+	$data =FALSE;
+	$row = mysqli_fetch_assoc($result);
+	return $row['countable'];
+}
+
 // select single column value
 function getSingle($table,$column,$where,$value){
 	global $conn;

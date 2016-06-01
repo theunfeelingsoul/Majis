@@ -1,0 +1,18 @@
+{
+  "name": "majis",
+  "homepage": "https://github.com/theunfeelingsoul/Majis",
+  "authors": [
+    "Angel Beats <victorstinefuture@gmail.com>"
+  ],
+  "description": "majis",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

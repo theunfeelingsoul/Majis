@@ -34,13 +34,6 @@ if (isset($_POST['report_submit'])) {
 
 	}
 
-	// echo "<pre>";
-	// print_r($data);
-	// echo "</pre>";
-	// echo $timestamp = strtotime($_POST['frm_date']);
-	// exit();
-
-
 
 }
 ?>
@@ -64,17 +57,11 @@ if (isset($_POST['report_submit'])) {
 					<!-- <div class="page-header"> -->
 						<div class="page-title">Status of Facilities report</div>
 						<p>Shows a list of facilities by status</p>
-						<?php 
-							echo $frm_date;echo "</br>";
-echo $to_date;echo "</br>";
-echo $faci_status;echo "</br>";
-
-	 ?>
 						<hr/>
 						<!-- <div class="alert alert-info" role="alert">...</div> -->
 					<!-- </div> -->
 
-					<form class="form-inline" action="" method="post">
+					<form class="form-inline" action="" method="post" id="form_report_sf">
 					  <div class="form-group">
 					    <label class="sr-only" for="exampleInputEmail3">From</label>
 					    <input type="text"  name="frm_date" class="datepicker form-control" id="" placeholder="From" value="<?php echo $frm_date ==''?'':date('m/d/Y',$frm_date) ?>" required>
@@ -92,9 +79,9 @@ echo $faci_status;echo "</br>";
 						</select>
 					  </div>
 					  <button type="submit" name="report_submit" class="btn btn-default">Create report</button>
-					   <div class="form-group">
+					   <div class="form-group pdf_report_sf_link">
 					    <label class="sr-only" for="">Status</label>
-					    <a href="pdf_status_report.php?<?php echo "frm_date=$frm_date&to_date=$to_date& faci_status=$faci_status" ?>" target="_blank">Create PDF</a>
+					    <a <?= $frm_date == ""?'disabled="disabled" onclick="return false"':''; ?> class="btn btn-primary" href="pdf_status_report.php?<?php echo "frm_date=$frm_date&to_date=$to_date& faci_status=$faci_status" ?>" target="_blank">Export PDF</a>
 					  </div>
 					</form>
 				</div>
