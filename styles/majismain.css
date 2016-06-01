@@ -401,3 +401,24 @@ footer{
 }
 
 
+#login-back{
+    /*background-image: url("img/l.png");
+ background-repeat: no-repeat;*/
+ /*background-color: #16a8d1;*/
+}
+
+#lb{
+    position: absolute;
+
+}
+
+
+#bi img{
+    width: 1000px;
+}
+
+.ll{
+ background-color: #16a8d1;
+    
+}
+

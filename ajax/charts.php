@@ -33,8 +33,8 @@
         echo json_encode($o);
 
 	}elseif($_GET['q'] == "summary"){
-        $f_no_wor=(int)countWhere('faci_status','faci_con',1);
-        $f_yes_wor=(int)countWhere('faci_status','faci_con',0);
+        $f_no_wor=(int)countWhere('faci_problems','status',0);
+        $f_yes_wor=(int)countWhere('faci_problems','status',1);
         $prob_rptd=(int)countAll('faci_problems');
 
         $o = array(

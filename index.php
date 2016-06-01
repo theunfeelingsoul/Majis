@@ -8,8 +8,8 @@
 		include "database.php"; 
 		include "functions/query.func.php"; 
 
-		$f_no_wor=countWhere('faci_status','faci_con',0);
-		$f_yes_wor=countWhere('faci_status','faci_con',1);
+		$f_no_wor=countWhere('faci_problems','status',0);
+		$f_yes_wor=countWhere('faci_problems','status',1);
 		$prob_rptd=countAll('faci_problems');
 
 		$sql = "SELECT * FROM faci_problems WHERE status = 0 AND prob_date <= (now() - interval 3 month)";

@@ -70,42 +70,48 @@
 		}
 	 ?>
 </head>
-<body>
-<div class="container">
-	<div class="col-md-4 col-md-offset-4 login">
-		<h4>LOGIN</h4>
-		<form class="" action="" method="post">
-			<?php 
-				if (isset($loginfail)) {
-					echo $loginfail;
-				}
+<body class="ll">
+<div id="login-back">
+<div id="bi">
+	<img src="styles/img/l.png" id="lb" class="img-responsive" alt="Responsive image">
+</div>
+	<div class="container">
 
-				if ($status=='fail') {
-					fail($error);
-				}
+		<div class="col-md-5 col-md-offset-6 login">
+			<h4>LOGIN</h4>
+			<form class="" action="" method="post">
+				<?php 
+					if (isset($loginfail)) {
+						echo $loginfail;
+					}
 
-				if ($status=='loginfail') {
-					fail($error);
-				}
-			?>
-		  <div class="form-group">
-		    <label for="">Username</label>
-		    <input type="text" name="username" class="form-control" id="" placeholder="username"
-		    	value="<?php if(isset($_POST['username'])){echo $_POST['username'];}else{echo "administrator";} ?>" >
-		  </div>
-		  <div class="form-group">
-		    <label for="">Password</label>
-		    <input type="password" name="pass" value="123" class="form-control" id="" placeholder="Password">
-		  </div>
-		  
-		  
-		  <button type="submit" name="login" class="btn btn-default">Login</button>
-		</form>
-		<br/>
-		<p>
-			Dont have an account? <a href="register.php">Register</a>
-		</p>
-	</div>
+					if ($status=='fail') {
+						fail($error);
+					}
+
+					if ($status=='loginfail') {
+						fail($error);
+					}
+				?>
+			  <div class="form-group">
+			    <label for="">Username</label>
+			    <input type="text" name="username" class="form-control input-lg" id="" placeholder="username"
+			    	value="<?php if(isset($_POST['username'])){echo $_POST['username'];}else{echo "administrator";} ?>" >
+			  </div>
+			  <div class="form-group">
+			    <label for="">Password</label>
+			    <input type="password" name="pass" value="123" class="form-control input-lg" id="" placeholder="Password">
+			  </div>
+			  
+			  
+			  <button type="submit" name="login" class="btn btn-default input-lg">Login</button>
+			</form>
+			<br/>
+			<p>
+				Dont have an account? <a href="register.php">Register</a>
+			</p>
+		</div>
+		</div>
 	</div>
 
 </body>
