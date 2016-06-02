@@ -65,7 +65,7 @@
 		var st = urlstring.indexOf(pages[i]) > -1;
 		if (st == true) {
 			// chnage the or add the respective classes
-			if (pages[i]=='problems' || pages[i]=='facilities' || pages[i]=='gps' ) {
+			if (pages[i]=='problems' || pages[i]=='facilities' || pages[i]=='gps' || pages[i]=='index' ) {
 				$("#headingOne .collapsed").attr("aria-expanded","true");
 
 				$('#collapseOne').addClass('in');

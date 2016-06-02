@@ -110,11 +110,11 @@
 			            			</tr>
 			            			<tr>
 			            				<td>Number of Not working facilities</td>
-			            				<td><b><?= $f_yes_wor; ?></b></td>
+			            				<td><b><?= $f_no_wor; ?></b></td>
 			            			</tr>
 			            			<tr>
 			            				<td>Number of working facilities</td>
-			            				<td><b><?= $f_no_wor; ?></b></td>
+			            				<td><b><?= $f_yes_wor; ?></b></td>
 			            			</tr>
 			            		</tbody>
 			            	</table>
