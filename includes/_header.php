@@ -9,7 +9,9 @@
 				Water Monitoring and Opration System
 			</div>
 		</div>
-
+		<div class="col-md-5 nav navbar-nav navbar-left">
+			<div id="title-head"></div>
+		</div>
 
 	    <ul class="nav navbar-nav navbar-right">
 	    	<!-- <span class="glyphicon glyphicon-user"></span> -->
