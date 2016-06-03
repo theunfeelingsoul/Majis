@@ -25,8 +25,8 @@
         // splice the darray from the query into the empty array created
         foreach ($data as $key => $value) {
         	$inserted = (int)$value['count_by_month']; 
-			unset($o[$value['month']]); // unset the array at position to be spliced.
-			array_splice( $o, $value['month'], 0, $inserted ); 
+			unset($o[$value['month']-1]); // unset the array at position to be spliced.
+			array_splice( $o, $value['month']-1, 0, $inserted ); 
         }
 
         // encode the array to json

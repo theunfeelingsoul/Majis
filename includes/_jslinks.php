@@ -55,7 +55,7 @@
 	// get the url
 	var urlstring = window.location.href;
 	// save the pages in an array
-	var pages = ['problems', 'facilities', 'gps', 'report_sf','report_cf'];
+	var pages = ['problems', 'facilities', 'gps', 'report_sf','report_cf','index','edit_facility_status'];
 	// get the length of array
 	var arrayLength = pages.length;
 	// loop over the pages array
@@ -65,7 +65,7 @@
 		var st = urlstring.indexOf(pages[i]) > -1;
 		if (st == true) {
 			// chnage the or add the respective classes
-			if (pages[i]=='problems' || pages[i]=='facilities' || pages[i]=='gps' || pages[i]=='index' ) {
+			if (pages[i]=='problems' || pages[i]=='facilities' || pages[i]=='gps' || pages[i]=='index' || pages[i]=='edit_facility_status' ) {
 				$("#headingOne .collapsed").attr("aria-expanded","true");
 
 				$('#collapseOne').addClass('in');
@@ -95,6 +95,7 @@ $(function () {
 	$.get( "ajax/charts.php?q=no_of_porb", function( data ) {
 	  
 	  var json = JSON.parse(data);
+	  console.log(json);
 	  var prob_rptd = $('input#prob_rptd').val();
 	    $('#c').highcharts({
 	    	credits: {
@@ -149,6 +150,9 @@ $(function () {
             plotShadow: false,
             type: 'pie'
         },
+        credits: {
+				enabled: false
+			},
         title: {
             text: 'Browser market shares January, 2015 to May, 2015'
         },
@@ -214,6 +218,9 @@ $.get( "ajax/charts.php?q=summary", function( data ) {
                 plotShadow: false,
                 type: 'pie'
             },
+            credits: {
+				enabled: false
+			},
             title: {
                 text: 'CONDITION OF WATER FACILITIES'
             },
