@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 19, 2016 at 04:35 PM
+-- Generation Time: Jun 03, 2016 at 05:14 PM
 -- Server version: 10.1.10-MariaDB
 -- PHP Version: 7.0.3
 
@@ -200,15 +200,33 @@ CREATE TABLE `faci_problems` (
   `faci_num` varchar(100) NOT NULL,
   `problems` text NOT NULL,
   `com_name` varchar(100) NOT NULL,
-  `status` int(11) NOT NULL
+  `status` int(11) NOT NULL,
+  `prob_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `faci_problems`
 --
 
-INSERT INTO `faci_problems` (`id`, `faci_name`, `faci_num`, `problems`, `com_name`, `status`) VALUES
-(1, 'Sekondari', '05052008042WP05', ' Problem generator malfunction', '', 0);
+INSERT INTO `faci_problems` (`id`, `faci_name`, `faci_num`, `problems`, `com_name`, `status`, `prob_date`) VALUES
+(1, 'Sekondari', '05052008042WP05', ' Problem generator malfunction', '', 0, '2016-01-31 21:00:00'),
+(2, '', '', ' pumpnotfunction', '', 0, '2016-02-22 21:00:00'),
+(3, 'Kwa Nzira', '111', ' pump mulfunction', 'Mabilu W', 0, '2016-02-22 21:00:00'),
+(4, 'Shuleni', '05052008163WP01', ' pump problem', '', 0, '2016-03-14 21:00:00'),
+(5, 'Kwa Juakali', '05052008194WP01', ' the shaft seal start to leak', '', 0, '2016-03-16 21:00:00'),
+(6, 'Kwa Juakali', '05052008194WP01', ' the shaft seal start to leak and overheat', '', 0, '2016-03-18 21:00:00'),
+(7, 'Shuleni', '05052008163WP01', ' pump engine over heat', '', 0, '2016-03-29 21:00:00'),
+(8, 'Kwa Bibi Mzaramo', '05052008193WP04', 'pump breakdown', 'Mindu Wa', 0, '2016-04-06 21:00:00'),
+(9, 'Kambi Tano', '05052008194WP03', ' the shaft seal start to leak', '', 0, '2016-04-10 21:00:00'),
+(10, '', '', ' pump break down', '', 0, '2016-04-21 21:00:00'),
+(11, 'Msikitini', '05052008182WP08', 'pump break down', 'Kimanda', 1, '2016-05-23 21:00:00'),
+(12, 'Kwa Mzee Kunambi', '05052008182WP06', ' engine overheat', 'Kimanda', 1, '2016-06-03 14:00:36'),
+(13, 'Kwa Mzee Kunambi', '05052008182WP06', ' engine malfunction', 'Kimanda', 1, '2016-05-24 21:00:00'),
+(14, 'Msikitini', '05052008182WP08', ' engine malfunction', 'Kimanda', 1, '2016-06-03 14:05:36'),
+(15, 'Kwa Mzee Kunambi', '05052008182WP06', ' engine and shaft malfunction', 'Kimanda', 0, '2016-05-27 16:09:04'),
+(16, '', '', ' engine and shaft malfunction', '', 1, '2016-06-02 15:57:39'),
+(17, '', '', 'shaft start to leak', '', 1, '2016-05-29 11:04:13'),
+(18, 'Migombani', '05052008042WP10', ' shaft start to leak', '', 0, '2016-05-30 11:05:58');
 
 -- --------------------------------------------------------
 
@@ -230,6 +248,35 @@ CREATE TABLE `faci_status` (
 --
 
 INSERT INTO `faci_status` (`id`, `faci_num`, `problem_id`, `faci_con`, `comment`, `date_of_update`) VALUES
+(1, '05052008182WP06', ' 15', '1', 'sdvsdvsv', '1464776327'),
+(2, '', ' 2', '1', 'ui', '1464792546'),
+(3, '', ' 17', '0', 'dcdc', '1464962695'),
+(4, '05052008182WP08', ' 14', '1', 'ssdvsdfvvsv', '1464962730'),
+(5, '05052008182WP06', ' 13', '1', 'cccc', '1464962768'),
+(6, '', ' 17', '1', 'sdcsdcsdc', '1464962790'),
+(7, '05052008182WP08', ' 11', '1', 'scsdcs', '1464962816'),
+(8, '05052008182WP06', ' 15', '0', 'sdcsdc', '1464962831');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faci_status_back_6_1_2016`
+--
+
+CREATE TABLE `faci_status_back_6_1_2016` (
+  `id` int(11) NOT NULL,
+  `faci_num` varchar(255) DEFAULT NULL,
+  `problem_id` varchar(255) NOT NULL,
+  `faci_con` varchar(255) DEFAULT NULL COMMENT 'facility condition or facility status',
+  `comment` varchar(255) DEFAULT NULL,
+  `date_of_update` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `faci_status_back_6_1_2016`
+--
+
+INSERT INTO `faci_status_back_6_1_2016` (`id`, `faci_num`, `problem_id`, `faci_con`, `comment`, `date_of_update`) VALUES
 (1, '05052008042WP05', ' 1', '1', 'acdcadccac', '1461957645'),
 (3, '05052008042WP0g', ' 1', '1', 'dcdcdc', '1461958241'),
 (4, '05052008042WP05', ' 1', '1', 'xczxcaa', '1462688326'),
@@ -336,7 +383,11 @@ INSERT INTO `faci_status` (`id`, `faci_num`, `problem_id`, `faci_con`, `comment`
 (210, '67543WP90', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
 (211, '4532WP87', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
 (212, 'dfbd', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(213, '7865WP80', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261');
+(213, '7865WP80', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
+(214, '05052008182WP06', ' 15', '1', 'ok', '1464774345'),
+(215, '05052008182WP06', ' 15', '1', 'ok 2', '1464774422'),
+(216, '05052008182WP06', ' 15', '0', 'no  fund', '1464774603'),
+(217, '05052008182WP06', ' 15', '1', 'money has been supplied', '1464774624');
 
 -- --------------------------------------------------------
 
@@ -5901,6 +5952,12 @@ ALTER TABLE `faci_status`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `faci_status_back_6_1_2016`
+--
+ALTER TABLE `faci_status_back_6_1_2016`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `faci_type`
 --
 ALTER TABLE `faci_type`
@@ -5983,12 +6040,17 @@ ALTER TABLE `faci`
 -- AUTO_INCREMENT for table `faci_problems`
 --
 ALTER TABLE `faci_problems`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT for table `faci_status`
 --
 ALTER TABLE `faci_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=214;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT for table `faci_status_back_6_1_2016`
+--
+ALTER TABLE `faci_status_back_6_1_2016`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=218;
 --
 -- AUTO_INCREMENT for table `faci_type`
 --
