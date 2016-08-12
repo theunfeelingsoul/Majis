@@ -49,7 +49,7 @@ if ($num_rows > 0) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>majis</title>
+	<title>Facility Status</title>
 	<!-- links css-->
 	<?php include "includes/_csslinks.php"; ?>
 

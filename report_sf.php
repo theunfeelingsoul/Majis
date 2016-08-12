@@ -40,7 +40,7 @@ if (isset($_POST['report_submit'])) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>majis</title>
+	<title>Status Report</title>
 	<!-- links css-->
 	<?php include "includes/_csslinks.php"; ?>
 </head>
@@ -89,8 +89,8 @@ if (isset($_POST['report_submit'])) {
 
 				<div class="row">
 					<div class="col-md-12">
-						<div class="table-responsive">
-							<div class="white-data-table">
+						<div class="white-data-table">
+							<div class="table-responsive">
 								<table class="hover row-border compact" id="faci-table">
 				                    <thead>
 			                            <tr>

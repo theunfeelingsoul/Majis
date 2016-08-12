@@ -100,7 +100,7 @@
 	<div class="row">
 		<div class="col-md-5 col-md-offset-6">
 			<div class="login-title">
-			  <span>WMOS SYSTEM</span>
+			  <span>WMOS Login</span>
 			</div>
 		</div>
 	</div>

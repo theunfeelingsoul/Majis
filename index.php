@@ -31,7 +31,7 @@
 
 	?>
 	
-	<title>majis</title>
+	<title>WMOS Dashboard</title>
 
 	<!-- links css-->
 	<?php include "includes/_csslinks.php"; ?>

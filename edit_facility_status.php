@@ -141,7 +141,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Edit facility Status</title>
+	<title>Edit: Facility Status</title>
 
   	<!-- links css-->
  <?php include "includes/_csslinks.php"; ?>
@@ -175,7 +175,7 @@
                   </div>
                   <div id="faci_detail" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="faci_detail_heading">
                     <div class="panel-body">
-                      
+                      <div class="table-responsive">
                        <table class="table-condensed table table-striped">
                         <thead>
                           <th></th>
@@ -220,7 +220,7 @@
                           </tr>
                         </tbody>
                       </table>
-
+                    </div><!--/.table-responsive-->
                     </div>
                   </div>
                 </div>
@@ -299,6 +299,7 @@
             <div class="col-md-7">
               <div class="white-data-table">
                 <h4>History of problems</h4><hr/>
+                <div class="table-responsive">
                 <table  class="table table-condensed table-striped">
                    <thead>
                       <th>Date</th>
@@ -307,7 +308,9 @@
                       <th>Comment</th>
                     </thead>
                 </table>
+                </div><!--table-responsive-->
                 <div class="history-problem-table">
+                <div class="table-responsive">
                   <table class="table table-condensed table-striped">
                    <!--  <thead>
                       <th>Date</th>
@@ -330,6 +333,7 @@
 
                     </tbody>
                   </table>
+                </div><!--table-responsive-->
                 </div>
               </div>
             </div>

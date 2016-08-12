@@ -68,7 +68,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>majis</title>
+	<title>Add: Facility</title>
 
   	<!-- links css-->
  <?php include "includes/_csslinks.php"; ?>

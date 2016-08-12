@@ -68,7 +68,7 @@ if ($num_rows > 0) {
 <!DOCTYPE html>
 <html>
 <head>
-	<title>majis</title>
+	<title>Facilities</title>
 	<!-- links css-->
 	<?php include "includes/_csslinks.php"; ?>
 
@@ -93,8 +93,8 @@ if ($num_rows > 0) {
 
 				<div class="row">
 					<div class="col-md-12">
-						<div class="table-responsive">
-							<div class="white-data-table">
+						<div class="white-data-table">
+							<div class="table-responsive">
 								<table class="hover row-border compact" id="faci-table">
 				                    <thead>
 			                            <tr>

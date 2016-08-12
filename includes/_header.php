@@ -36,6 +36,7 @@
 	              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Online Monitoring <span class="caret"></span></a>
 	              <ul class="dropdown-menu">
 	                <li><a href="problems.php">Incoming problems</a></li>
+	                <li><a href="broadcast.php">Broadcast</a></li>
 	                <li><a href="facilities.php">Facilities</a></li>
 	                <li><a href="gps.php">Facility Location</a></li>
 	               

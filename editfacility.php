@@ -63,7 +63,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Edit facility</title>
+	<title>Edit: Facility</title>
 
   	<!-- links css-->
  <?php include "includes/_csslinks.php"; ?>

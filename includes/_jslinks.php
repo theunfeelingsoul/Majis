@@ -55,7 +55,7 @@
 	// get the url
 	var urlstring = window.location.href;
 	// save the pages in an array
-	var pages = ['problems', 'facilities', 'gps', 'report_sf','report_cf','index','edit_facility_status'];
+	var pages = ['problems', 'facilities', 'gps', 'report_sf','report_cf','index','edit_facility_status','broadcast'];
 	// get the length of array
 	var arrayLength = pages.length;
 	// loop over the pages array
@@ -65,7 +65,13 @@
 		var st = urlstring.indexOf(pages[i]) > -1;
 		if (st == true) {
 			// chnage the or add the respective classes
-			if (pages[i]=='problems' || pages[i]=='facilities' || pages[i]=='gps' || pages[i]=='index' || pages[i]=='edit_facility_status' ) {
+			if (pages[i]=='problems' || 
+				pages[i]=='facilities' || 
+				pages[i]=='gps' || 
+				pages[i]=='index' || 
+				pages[i]=='edit_facility_status'|| 
+				pages[i]=='broadcast' 
+				) {
 				$("#headingOne .collapsed").attr("aria-expanded","true");
 
 				$('#collapseOne').addClass('in');

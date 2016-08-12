@@ -21,7 +21,7 @@
 
 <html>
 <head>
-	<title>majis</title>
+	<title>Location</title>
 	<!-- links css-->
 	<?php include "includes/_csslinks.php"; ?>
 

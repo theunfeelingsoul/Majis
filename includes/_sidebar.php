@@ -28,6 +28,9 @@
 						<a href="problems.php">
 							<li>Incoming problems</li>
 						</a>
+						<a href="broadcast.php">
+							<li>Broadcast</li>
+						</a>
 						<a href="facilities.php">
 							<li>Facilities</li>
 						</a>

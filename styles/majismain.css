@@ -454,3 +454,21 @@ footer{
     font-size: 30px;
     padding-top: 10px;
 }
+
+
+/*broadcast*/
+.cow{
+    float: left;
+}
+.cow2{
+    float: right;
+}
+
+.sms-menu a{
+    text-decoration: none;
+    color: #000;
+}
+
+.sms-menu li:hover{
+    background: #f1f1f1;
+}
