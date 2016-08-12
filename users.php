@@ -29,37 +29,39 @@ $u = getAll('user');
 			<?php include "includes/_sidebar.php"; ?>
 
 			<div class="col-md-10">
-				<h1 class="page-header">Users</h1>
+				<h1 class="page-title">Users</h1>
 
 				<div class="row">
 					<div class="col-md-12">
-						<table class="display compact" id="sms-table">
-		                    <thead>
-	                            <tr>
-	                                <th>ID</th>
-	                                <th>Username</th>
-	                                <th>Role</th>
-	                            </tr>
-	                        </thead>
-	                        <tbody>
-	                        	<?php 
-	                        		$i = 1;
-	                        		if ($u):
-		                        		foreach ($u as $key => $user):
-	                        	 ?>
+						<div class="table-responsive">
+							<table class="display compact" id="sms-table">
+			                    <thead>
 		                            <tr>
-		                                <td><?php echo $i++ ?></td>
-		                                <td><?php echo $user['username'] ?></td>
-		                               
-		                                <td><?php echo $user['role'] ?></td>
+		                                <th>ID</th>
+		                                <th>Username</th>
+		                                <th>Role</th>
 		                            </tr>
+		                        </thead>
+		                        <tbody>
+		                        	<?php 
+		                        		$i = 1;
+		                        		if ($u):
+			                        		foreach ($u as $key => $user):
+		                        	 ?>
+			                            <tr>
+			                                <td><?php echo $i++ ?></td>
+			                                <td><?php echo $user['username'] ?></td>
+			                               
+			                                <td><?php echo $user['role'] ?></td>
+			                            </tr>
 
-	                            <?php   
-										endforeach;
-		                           	endif;
-	                             ?>
-	                        </tbody>
-	                    </table>
+		                            <?php   
+											endforeach;
+			                           	endif;
+		                             ?>
+		                        </tbody>
+		                    </table>
+						</div>
 					</div>
 				</div>
 

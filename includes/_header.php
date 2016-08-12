@@ -1,7 +1,15 @@
-<?php  //include "includes/_sessions.php"; ?>
-<nav class="navbar navbar-default navbar-fixed-top" id="nav-boss">
+<!-- Static navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
 	<div class="container-fluid">
-		<div class="col-md-2 row logo-box">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<!-- <a class="navbar-brand" href="#">Project name</a> -->
+			<div class="row logo-box">
 			<div class="logo-box-title">
 				WMOS
 			</div>
@@ -9,45 +17,43 @@
 				Water Monitoring and Opration System
 			</div>
 		</div>
-		<div class="col-md-5 nav navbar-nav navbar-left">
-			<div id="title-head"></div>
 		</div>
+		<div id="navbar" class="navbar-collapse collapse">
 
-	    <ul class="nav navbar-nav navbar-right">
-	    	<!-- <span class="glyphicon glyphicon-user"></span> -->
-	    	<li>
-	    		<a href="">
-		    		<!-- <span class="glyphicon glyphicon-envelope"></span>
-		    		<span class="badge">1</span> -->
-	    		</a>
-	    	</li>
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-					<!-- <span class="glyphicon glyphicon-user"></span>  -->
-					<?php echo $_SESSION['username']; ?>
-					<span class="caret"></span>
-				</a>
-				
-				<ul class="dropdown-menu">
-					<li>
-						<a href="#">
-							<!-- <span class="glyphicon glyphicon-user"></span> -->
-							&nbsp;&nbsp;Profile
-						</a>
-					</li>
-					<li role="separator" class="divider"></li>
-					<li>
-						<a href="logout.php">
-							<!-- <span class="glyphicon glyphicon-log-out"></span> -->
-							&nbsp;&nbsp;Log out
-						</a>
-					</li>
-				</ul>
-			</li>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><?php echo $_SESSION['username']; ?> <span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="logout.php">Logout</a></li>
+						<li role="separator" class="divider"></li>
+					</ul>
+				</li>
 
-		</ul>
+				<li role="separator" class="divider"></li>
+				 <!-- <li class="active"><a href="#">Menu</a></li> -->
+				<li class="active visible-xs"><a href="index.php">Dashboard</a></li>
+				<li class="dropdown visible-xs">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Online Monitoring <span class="caret"></span></a>
+	              <ul class="dropdown-menu">
+	                <li><a href="problems.php">Incoming problems</a></li>
+	                <li><a href="facilities.php">Facilities</a></li>
+	                <li><a href="gps.php">Facility Location</a></li>
+	               
+	              </ul>
+	            </li>
+	            <li class="dropdown visible-xs">
+	              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports <span class="caret"></span></a>
+	              <ul class="dropdown-menu">
+	                <li><a href="report_sf.php">status of facilities</a></li>
+	                <li><a href="report_cf.php">Problem remarks</a></li>
+	                <li><a href="#">Number of problem reported</a></li>
+	               
+	              </ul>
+	            </li>
+                <li class="visible-xs"> <a href="users.php">Users</a></li>
 
-
-	    
-	  </div><!-- /.container-fluid -->
+			</ul>
+		</div><!--/.nav-collapse -->
+	</div>
 </nav>
+

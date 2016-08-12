@@ -21,8 +21,9 @@ body{
 .logo-box{
     background-color: #8BC34A;
     height: 64px;
-    width: 17%;
-    padding-top: 5px;
+    width: 123%;
+    /*padding-top: 5px;*/
+    padding: 0px 10px 0px 10px;
 }
 
 .logo-box-title{
@@ -30,7 +31,8 @@ body{
     /*font-size: 13px;*/
     font-weight: bold;
     font-size: 25px;
-    padding-left: 55px;
+    /*padding-left: 55px;*/
+    text-align: center;
 }
 
 .logo-box-name{
@@ -85,6 +87,10 @@ body{
 /*********************************************************/
 /*************** BEGIN SIDEBAR STYLING *******************/
 /*********************************************************/
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
     .sidebar{
     	background-color:#26c6da;
     	padding-left: 0px;
@@ -94,6 +100,8 @@ body{
         height: 120vh;
         /*min-height: 700px;*/
         overflow: hidden;
+        display: block;
+        z-index: 1000;
 
     }
 
@@ -169,6 +177,20 @@ body{
         border-bottom: none;
     }
 
+    .page-title{
+        text-align:unset !important;
+    }
+
+    .nav-side{
+        /*display: b;*/
+        /*visibility:visible;*/
+    }
+} 
+.nav-side{
+        /*display: block;*/
+         /*visibility:visible;*/
+    }
+/*end media query*/
     #page{
         min-height: 80vh;
         margin-top: 64px;
@@ -179,24 +201,28 @@ body{
     .page-title{
         /*padding-bottom: 30px;*/
         font-size: 30px;
+        /*padding-left: 10px;*/
         /*border-bottom: solid 1px #c5c5c5;*/
+        text-align: center;
     }
 
     /*.page-title*/
 
-/* 
- * all li have default padding we just put O to 
- * remove them inorder for the line to fit
-*/
-.nav-sidebar li{
-	border-bottom: 1px solid #d8d7d7;
-	padding:0px; 
-}
+    /* 
+     * all li have default padding we just put O to 
+     * remove them inorder for the line to fit
+    */
+    .nav-sidebar li{
+    	border-bottom: 1px solid #d8d7d7;
+    	padding:0px; 
+    }
 
-.sidebar ul{
-	padding: 0px;
+    .sidebar ul{
+    	padding: 0px;
 
-}
+    }
+
+
 /*.row col-md-2 {
 	float: left;
 }*/

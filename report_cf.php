@@ -93,38 +93,40 @@ if (isset($_POST['report_submit'])) {
 				
 
 				<div class="row">
-					<div class="col-md-12">
-						<div class="white-data-table">
-							<table class="hover row-border compact" id="faci-table">
-			                    <thead>
-		                            <tr>
-			                            <th>Region</th>
-										<th>LGA</th>
-										<th>Ward</th>
-										<th>Facilities Number</th>
-										<th>Facilities Name</th>
-										<th>Date</th>
-										<th>Problem</th>
-										<th>Comments</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                        	<?php if($data):?>
-		                        		<?php foreach ($data as $key => $value):?>
-				                        		<tr>
-				                        			<td><?php echo $value['region'] ?></td>
-				                        			<td><?php echo $value['lga'] ?></td>
-				                        			<td><?php echo $value['ward'] ?></td>
-				                        			<td><?php echo $value['faci_num'] ?></td>
-				                        			<td><?php echo $value['faci_name'] ?></td>
-				                        			<td><?php echo date('d - m - Y',$value['date_of_update']) ?></td>
-				                        			<td><?php echo $value['problem'] ?></td>
-				                        			<td><?php echo $value['comment'] ?></td>
-				                        		</tr>
-		                        	<?php endforeach; ?>
-		                        	<?php endif; ?>
-		                        </tbody>
-		                    </table>
+					<div class="table-responsive">
+						<div class="col-md-12">
+							<div class="white-data-table">
+								<table class="hover row-border compact" id="faci-table">
+				                    <thead>
+			                            <tr>
+				                            <th>Region</th>
+											<th>LGA</th>
+											<th>Ward</th>
+											<th>Facilities Number</th>
+											<th>Facilities Name</th>
+											<th>Date</th>
+											<th>Problem</th>
+											<th>Comments</th>
+			                            </tr>
+			                        </thead>
+			                        <tbody>
+			                        	<?php if($data):?>
+			                        		<?php foreach ($data as $key => $value):?>
+					                        		<tr>
+					                        			<td><?php echo $value['region'] ?></td>
+					                        			<td><?php echo $value['lga'] ?></td>
+					                        			<td><?php echo $value['ward'] ?></td>
+					                        			<td><?php echo $value['faci_num'] ?></td>
+					                        			<td><?php echo $value['faci_name'] ?></td>
+					                        			<td><?php echo date('d - m - Y',$value['date_of_update']) ?></td>
+					                        			<td><?php echo $value['problem'] ?></td>
+					                        			<td><?php echo $value['comment'] ?></td>
+					                        		</tr>
+			                        	<?php endforeach; ?>
+			                        	<?php endif; ?>
+			                        </tbody>
+			                    </table>
+							</div>
 						</div>
 					</div>
 				</div>

@@ -13,9 +13,9 @@
 	<script type="text/javascript">
 		$(document).ready( function () {
 			// add the id of the table to make it a data table
-		    $('#sms-table').DataTable(); 
-		    $('#faci-table').DataTable(); 
-		    $('#sms-table').DataTable();
+		    $('#sms-table').DataTable({responsive: true}); 
+		    $('#faci-table').DataTable({responsive: true}); 
+		    // $('#sms-table').DataTable();
 		    $('#sms-table-dash').DataTable();
 		   
 		} );
