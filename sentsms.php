@@ -88,7 +88,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 											    <th>Recipent</th>
 											    <th>Message</th>
 											    <th>Date</th>
-											    <th>Delete</th>
+											    <?php echo $_SESSION['role'] == 'user' ? '<th class="hidden">':'<th>' ?>Delete</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -102,7 +102,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 												<td><?php echo $value['to_who'];?></td>
 												<td><?php echo $value['message'];?></td>
 												<td><?php echo $value['date_sent']? date("M j",$value['date_sent']):'';?></td>
-												<td>
+												<?php echo $_SESSION['role'] == 'user' ? '<td class="hidden">':'<td>' ?>
 
 													<a onclick='deleteItem(<?php echo $value['id'] ?>);return false;'  href="delete_sentsms.php?id=<?=$value['id'] ?>">
 													<span class="glyphicon glyphicon-remove-circle"></span>
