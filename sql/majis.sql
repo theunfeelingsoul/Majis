@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 03, 2016 at 05:14 PM
--- Server version: 10.1.10-MariaDB
--- PHP Version: 7.0.3
+-- Generation Time: Aug 15, 2016 at 03:06 PM
+-- Server version: 10.1.13-MariaDB
+-- PHP Version: 5.6.23
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -87,7 +87,7 @@ CREATE TABLE `faci` (
 --
 
 INSERT INTO `faci` (`id`, `region`, `lga`, `faci_num`, `ward`, `faci_name`, `faci_type`, `com_name`, `com_contrib`, `source`) VALUES
-(2, 'Morogoro', 'Morogoro Urban', '0505052008173WP07', 'Bigwa', 'Kwa Nzira', 'gravity', 'Mabilu W', 'pay monthly', 'river'),
+(2, 'Morogoro', 'Morogoro Urban', '111', 'Bigwa', 'Kwa Nzira', 'gravity', 'Mabilu W', 'pay monthly', 'river'),
 (3, 'Morogoro', 'Morogoro Urban', '', 'Bigwa', '', '', 'Mabilu W', 'pay monthly', 'river'),
 (4, 'Morogoro', 'Morogoro Urban', '05052008093WP01', 'Mwembesongo', 'Kwa Mama Msukuma', 'other', '', 'never pay', 'shallow well'),
 (5, 'Morogoro', 'Morogoro Urban', '0505052008173WP01', 'Bigwa', 'Kwa Mzee Yovini', 'gravity', 'Kungwa W', 'never pay', 'spring'),
@@ -186,7 +186,12 @@ INSERT INTO `faci` (`id`, `region`, `lga`, `faci_num`, `ward`, `faci_name`, `fac
 (98, 'Morogoro', 'Morogoro Urban', '05052008194WP01', 'Kihonda', 'Kwa Juakali', 'other', '', 'never pay', 'shallow well'),
 (99, 'Morogoro', 'Morogoro Urban', '05052008194WP02', 'Kihonda', 'Kambi Tano', 'handpump', '', 'pay when scheme fails', 'shallow well'),
 (100, 'Morogoro', 'Morogoro Urban', '05052008194WP03', 'Kihonda', 'Kambi Tano', 'other', '', 'never pay', 'shallow well'),
-(101, 'Morogoro', 'Morogoro Rural', 'dfvdfv5555gggg', 'Lundi', 'dfvdfv', 'dfvdfvdfv', 'acasca', 'pay', 'borehole');
+(101, 'Morogoro', 'Morogoro Rural', 'dfvdfv5555gggg', 'Lundi', 'dfvdfv', 'dfvdfvdfv', 'acasca', 'pay', 'borehole'),
+(102, 'Morogoro', 'Morogoro Rural', '2343WP987', 'Kolero', 'Twangoma', 'Gravity', 'twanga', 'pay', 'spring'),
+(103, 'Morogoro', 'Morogoro Urban', '67543WP90', 'Mazimbu', '', 'Choose facility type', 'VVVV', 'Choose contribution', ' source'),
+(104, 'Morogoro', 'Morogoro Urban', '4532WP87', 'Ulanga', 'XXZZ', 'Motorpump', 'XXZZ', 'pay', 'dam'),
+(105, 'Morogoro', 'Morogoro Rural', 'dfbd', 'Bwakila Chini', 'dfbdfb', 'Handpump', 'xdfbvf', 'Not pay', 'borehole'),
+(106, 'Morogoro', 'Morogoro Rural', '7865WP80', 'Kolero', 'ttt', 'Handpump', 'YYY', 'pay', 'shallow well');
 
 -- --------------------------------------------------------
 
@@ -211,22 +216,62 @@ CREATE TABLE `faci_problems` (
 INSERT INTO `faci_problems` (`id`, `faci_name`, `faci_num`, `problems`, `com_name`, `status`, `prob_date`) VALUES
 (1, 'Sekondari', '05052008042WP05', ' Problem generator malfunction', '', 0, '2016-01-31 21:00:00'),
 (2, '', '', ' pumpnotfunction', '', 0, '2016-02-22 21:00:00'),
-(3, 'Kwa Nzira', '111', ' pump mulfunction', 'Mabilu W', 0, '2016-02-22 21:00:00'),
+(3, 'Kwa Nzira', '111', ' pump mulfunction', 'Mabilu W', 1, '2016-02-22 21:00:00'),
 (4, 'Shuleni', '05052008163WP01', ' pump problem', '', 0, '2016-03-14 21:00:00'),
 (5, 'Kwa Juakali', '05052008194WP01', ' the shaft seal start to leak', '', 0, '2016-03-16 21:00:00'),
 (6, 'Kwa Juakali', '05052008194WP01', ' the shaft seal start to leak and overheat', '', 0, '2016-03-18 21:00:00'),
 (7, 'Shuleni', '05052008163WP01', ' pump engine over heat', '', 0, '2016-03-29 21:00:00'),
 (8, 'Kwa Bibi Mzaramo', '05052008193WP04', 'pump breakdown', 'Mindu Wa', 0, '2016-04-06 21:00:00'),
-(9, 'Kambi Tano', '05052008194WP03', ' the shaft seal start to leak', '', 0, '2016-04-10 21:00:00'),
+(9, 'Kambi Tano', '05052008194WP03', ' the shaft seal start to leak', '', 1, '2016-04-10 21:00:00'),
 (10, '', '', ' pump break down', '', 0, '2016-04-21 21:00:00'),
-(11, 'Msikitini', '05052008182WP08', 'pump break down', 'Kimanda', 1, '2016-05-23 21:00:00'),
+(11, 'Msikitini', '05052008182WP08', 'pump break down', 'Kimanda', 0, '2016-05-23 21:00:00'),
 (12, 'Kwa Mzee Kunambi', '05052008182WP06', ' engine overheat', 'Kimanda', 1, '2016-06-03 14:00:36'),
-(13, 'Kwa Mzee Kunambi', '05052008182WP06', ' engine malfunction', 'Kimanda', 1, '2016-05-24 21:00:00'),
-(14, 'Msikitini', '05052008182WP08', ' engine malfunction', 'Kimanda', 1, '2016-06-03 14:05:36'),
-(15, 'Kwa Mzee Kunambi', '05052008182WP06', ' engine and shaft malfunction', 'Kimanda', 0, '2016-05-27 16:09:04'),
+(13, 'Kwa Mzee Kunambi', '05052008182WP06', ' engine malfunction', 'Kimanda', 0, '2016-05-24 21:00:00'),
+(14, 'Msikitini', '05052008182WP08', ' engine malfunction', 'Kimanda', 0, '2016-05-25 21:00:00'),
+(15, 'Kwa Mzee Kunambi', '05052008182WP06', ' engine and shaft malfunction', 'Kimanda', 1, '2016-05-27 16:09:04'),
 (16, '', '', ' engine and shaft malfunction', '', 1, '2016-06-02 15:57:39'),
-(17, '', '', 'shaft start to leak', '', 1, '2016-05-29 11:04:13'),
-(18, 'Migombani', '05052008042WP10', ' shaft start to leak', '', 0, '2016-05-30 11:05:58');
+(17, '', '', 'shaft start to leak', '', 0, '2016-05-29 11:04:13'),
+(18, 'Migombani', '05052008042WP10', ' shaft start to leak', '', 0, '2016-05-30 11:05:58'),
+(19, 'Kwa Bibi Mzaramo', '05052008193WP04', ' pump breakdown', 'Mindu Wa', 0, '2016-06-03 14:10:52'),
+(20, 'Kwa Bibi Mwasi', '05052008182WP07', ' engine malfunction', 'Kimanda', 0, '2016-06-03 14:13:55');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `faci_problems_back_6_1_2016`
+--
+
+CREATE TABLE `faci_problems_back_6_1_2016` (
+  `id` int(11) NOT NULL,
+  `faci_name` varchar(100) NOT NULL,
+  `faci_num` varchar(100) NOT NULL,
+  `problems` text NOT NULL,
+  `com_name` varchar(100) NOT NULL,
+  `status` int(11) NOT NULL,
+  `prob_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `faci_problems_back_6_1_2016`
+--
+
+INSERT INTO `faci_problems_back_6_1_2016` (`id`, `faci_name`, `faci_num`, `problems`, `com_name`, `status`, `prob_date`) VALUES
+(1, 'Sekondari', '05052008042WP05', ' Problem generator malfunction', '', 0, '0000-00-00 00:00:00'),
+(2, '', '', ' pumpnotfunction', '', 0, '0000-00-00 00:00:00'),
+(3, 'Kwa Nzira', '111', ' pump mulfunction', 'Mabilu W', 0, '0000-00-00 00:00:00'),
+(4, 'Shuleni', '05052008163WP01', ' pump problem', '', 0, '0000-00-00 00:00:00'),
+(5, 'Kwa Juakali', '05052008194WP01', ' the shaft seal start to leak', '', 0, '0000-00-00 00:00:00'),
+(6, 'Kwa Juakali', '05052008194WP01', ' the shaft seal start to leak and overheat', '', 0, '0000-00-00 00:00:00'),
+(7, 'Shuleni', '05052008163WP01', ' pump engine over heat', '', 0, '0000-00-00 00:00:00'),
+(8, 'Kwa Bibi Mzaramo', '05052008193WP04', 'pump breakdown', 'Mindu Wa', 0, '0000-00-00 00:00:00'),
+(9, 'Kambi Tano', '05052008194WP03', ' the shaft seal start to leak', '', 0, '0000-00-00 00:00:00'),
+(10, '', '', ' pump break down', '', 0, '0000-00-00 00:00:00'),
+(11, 'Msikitini', '05052008182WP08', 'pump break down', 'Kimanda', 0, '0000-00-00 00:00:00'),
+(12, 'Kwa Mzee Kunambi', '05052008182WP06', ' engine overheat', 'Kimanda', 0, '0000-00-00 00:00:00'),
+(13, 'Kwa Mzee Kunambi', '05052008182WP06', ' engine malfunction', 'Kimanda', 0, '0000-00-00 00:00:00'),
+(14, 'Msikitini', '05052008182WP08', ' engine malfunction', 'Kimanda', 0, '0000-00-00 00:00:00'),
+(15, 'Kwa Mzee Kunambi', '05052008182WP06', ' engine and shaft malfunction', 'Kimanda', 0, '0000-00-00 00:00:00'),
+(16, '', '', ' engine and shaft malfunction', '', 0, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -238,7 +283,7 @@ CREATE TABLE `faci_status` (
   `id` int(11) NOT NULL,
   `faci_num` varchar(255) DEFAULT NULL,
   `problem_id` varchar(255) NOT NULL,
-  `faci_con` varchar(255) DEFAULT NULL COMMENT 'facility condition or facility status',
+  `faci_con` varchar(255) DEFAULT NULL,
   `comment` varchar(255) DEFAULT NULL,
   `date_of_update` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -248,146 +293,12 @@ CREATE TABLE `faci_status` (
 --
 
 INSERT INTO `faci_status` (`id`, `faci_num`, `problem_id`, `faci_con`, `comment`, `date_of_update`) VALUES
-(1, '05052008182WP06', ' 15', '1', 'sdvsdvsv', '1464776327'),
-(2, '', ' 2', '1', 'ui', '1464792546'),
-(3, '', ' 17', '0', 'dcdc', '1464962695'),
-(4, '05052008182WP08', ' 14', '1', 'ssdvsdfvvsv', '1464962730'),
-(5, '05052008182WP06', ' 13', '1', 'cccc', '1464962768'),
-(6, '', ' 17', '1', 'sdcsdcsdc', '1464962790'),
-(7, '05052008182WP08', ' 11', '1', 'scsdcs', '1464962816'),
-(8, '05052008182WP06', ' 15', '0', 'sdcsdc', '1464962831');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `faci_status_back_6_1_2016`
---
-
-CREATE TABLE `faci_status_back_6_1_2016` (
-  `id` int(11) NOT NULL,
-  `faci_num` varchar(255) DEFAULT NULL,
-  `problem_id` varchar(255) NOT NULL,
-  `faci_con` varchar(255) DEFAULT NULL COMMENT 'facility condition or facility status',
-  `comment` varchar(255) DEFAULT NULL,
-  `date_of_update` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `faci_status_back_6_1_2016`
---
-
-INSERT INTO `faci_status_back_6_1_2016` (`id`, `faci_num`, `problem_id`, `faci_con`, `comment`, `date_of_update`) VALUES
-(1, '05052008042WP05', ' 1', '1', 'acdcadccac', '1461957645'),
-(3, '05052008042WP0g', ' 1', '1', 'dcdcdc', '1461958241'),
-(4, '05052008042WP05', ' 1', '1', 'xczxcaa', '1462688326'),
-(5, '05052008042WP05', ' 1', '0', 'no fund', '1463586723'),
-(111, '05052008093WP01', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(112, '0505052008173WP01', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(113, '0505052008173WP02', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(114, '0505052008173WP03', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(115, '0505052008173WP04', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(116, '0505052008173WP05', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(117, '0505052008173WP06', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(118, '0505052008173WP09', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(119, '0505052008173WP10', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(120, '0505052008173WP11', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(121, '0505052008173WP12', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(122, '0505052008173WP13', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(123, '0505052008173WP14', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(124, '0505052008173WP15', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(125, '0505052008173WP16', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(126, '0505052008173WP17', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(127, '05052008042WP01', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(128, '05052008042WP02', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(129, '05052008042WP03', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(130, '05052008042WP04', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(131, '05052008042WP05', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(132, '05052008042WP06', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(133, '05052008042WP07', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(134, '05052008042WP08', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(135, '05052008042WP09', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(136, '05052008042WP10', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(137, '05052008093WP02', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(138, '05052008093WP03', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(139, '05052008093WP04', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(140, '05052008095WP01', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(141, '05052008095WP02', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(142, '05052008095WP03', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(143, '05052008095WP04', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(144, '05052008095WP05', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(145, '05052008095WP06', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(146, '05052008095WP07', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(147, '05052008095WP08', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(148, '05052008133WP01', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(149, '05052008133WP02', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(150, '05052008133WP03', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(151, '05052008133WP04', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(152, '05052008133WP05', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(153, '05052008141WP01', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(154, '05052008152WP01', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(155, '05052008152WP02', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(156, '05052008152WP03', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(157, '05052008152WP04', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(158, '05052008152WP05', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(159, '05052008152WP06', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(160, '05052008152WP07', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(161, '05052008152WP08', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(162, '05052008152WP09', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(163, '05052008152WP10', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(164, '05052008152WP11', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(165, '05052008152WP12', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(166, '05052008152WP13', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(167, '05052008152WP14', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(168, '05052008152WP15', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(169, '05052008152WP16', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(170, '05052008152WP17', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(171, '05052008152WP18', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(172, '05052008152WP19', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(173, '05052008163WP01', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(174, '05052008163WP02', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(175, '05052008163WP03', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(176, '05052008163WP04', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(177, '05052008163WP05', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(178, '05052008163WP06', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(179, '05052008163WP07', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(180, '05052008163WP08', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(181, '05052008181WP01', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(182, '05052008181WP02', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(183, '05052008181WP03', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(184, '05052008181WP04', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(185, '05052008181WP05', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(186, '05052008181WP06', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(187, '05052008181WP07', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(188, '05052008182WP01', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(189, '05052008182WP02', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(190, '05052008182WP03', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(191, '05052008182WP04', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(192, '05052008182WP05', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(193, '05052008182WP06', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(194, '05052008182WP07', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(195, '05052008182WP08', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(196, '05052008182WP09', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(197, '05052008182WP10', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(198, '05052008183WP01', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(199, '05052008183WP02', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(200, '05052008183WP03', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(201, '05052008193WP01', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(202, '05052008193WP02', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(203, '05052008193WP03', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(204, '05052008193WP04', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(205, '05052008194WP01', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(206, '05052008194WP02', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(207, '05052008194WP03', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(208, 'dfvdfv5555gggg', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(209, '2343WP987', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(210, '67543WP90', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(211, '4532WP87', '0', '0', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(212, 'dfbd', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(213, '7865WP80', '1', '1', 'sdcscdcsdscsdcsdcsdcsdc', '1463656261'),
-(214, '05052008182WP06', ' 15', '1', 'ok', '1464774345'),
-(215, '05052008182WP06', ' 15', '1', 'ok 2', '1464774422'),
-(216, '05052008182WP06', ' 15', '0', 'no  fund', '1464774603'),
-(217, '05052008182WP06', ' 15', '1', 'money has been supplied', '1464774624');
+(1, '05052008182WP06', ' 15', '1', 'money', '1464797331'),
+(2, '', ' 16', '1', 'shaft replacement', '1464883006'),
+(3, '05052008182WP06', ' 12', '0', 'There is the need for......', '1464962328'),
+(4, '05052008182WP06', ' 12', '1', 'engine replacement ', '1464962403'),
+(5, '05052008194WP03', ' 9', '1', 'shaft replacement', '1465006472'),
+(6, '111', ' 3', '1', 'ok', '1465006912');
 
 -- --------------------------------------------------------
 
@@ -611,6 +522,68 @@ INSERT INTO `lgas` (`id`, `region`, `lga`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `nexmo`
+--
+
+CREATE TABLE `nexmo` (
+  `id` int(11) NOT NULL,
+  `msisdn` varchar(255) NOT NULL,
+  `msg_to` varchar(255) NOT NULL,
+  `msg_id` varchar(255) NOT NULL,
+  `msg_text` varchar(255) NOT NULL,
+  `msg_type` varchar(255) NOT NULL,
+  `msg_timestamp` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `nexmo`
+--
+
+INSERT INTO `nexmo` (`id`, `msisdn`, `msg_to`, `msg_id`, `msg_text`, `msg_type`, `msg_timestamp`) VALUES
+(1, '819060691830', '447559600526', '03000000EAE2109C', 'Victor 4/22 11:48', 'text', ''),
+(2, '819060691830', '447559600526', '02000000D18C62E5', '8975432: pumpnotfunction', 'text', '2016-04-22 15:16:56'),
+(3, '819060691830', '447559600526', '03000000EAE3FD49', '111: pump mulfunction', 'text', '2016-04-22 15:18:51'),
+(4, '819060691830', '447559600526', '03000000EAE431FA', '05052008163WP01: pump problem', 'text', '2016-04-22 15:22:17'),
+(5, '819060691830', '447559600526', '03000000EB0259A3', '05052008194WP01: the shaft seal start to leak', 'text', '2016-04-23 01:32:23'),
+(6, '819060691830', '447559600526', '03000000EB027AAA', '05052008194WP01: the shaft seal start to leak and overheat', 'text', '2016-04-23 01:36:54'),
+(7, '255657739156', '447559600526', '02000000D279A216', '05052008163WP01: pump engine over heat', 'text', '2016-04-26 09:27:33'),
+(8, '255654176868', '447559600526', '02000000D2839085', '05052008193WP04:pump breakdown', 'text', '2016-04-26 12:42:39'),
+(9, '819060691830', '447559600526', '02000000D2B680F6', '05052008194WP03: the shaft seal start to leak', 'text', '2016-04-27 06:13:06'),
+(10, '819060691830', '447559600526', '02000000D2B741B0', '05052008194WP04: pump break down', 'text', '2016-04-27 06:32:18'),
+(11, '819060691830', '447559600526', '02000000D2B75392', '05052008182WP08:pump break down', 'text', '2016-04-27 06:34:03'),
+(12, '819060691830', '447559600526', '02000000D3B13B89', '05052008182WP06: engine overheat', 'text', '2016-04-30 04:40:02'),
+(13, '819060691830', '447559600526', '02000000D43321CF', '05052008182WP06: engine malfunction', 'text', '2016-05-02 07:56:58'),
+(14, '819060691830', '447559600526', '02000000D93DA86E', '05052008182WP08: engine malfunction', 'text', '2016-05-20 07:18:39'),
+(15, '819060691830', '447559600526', '02000000D93DB3B2', '05052008182WP06: engine and shaft malfunction', 'text', '2016-05-20 07:19:43'),
+(16, '255719510741', '447559600526', '03000000F2F1CEAE', 'Number.... +44 7559 600526\nText.....05052008182WP06: engine and shaft malfunction', 'text', '2016-05-20 09:38:08'),
+(17, '819060691830', '447559600526', '03000000F69C3B74', '05052008194WP04:shaft start to leak', 'text', '2016-06-01 11:04:13'),
+(18, '819060691830', '447559600526', '03000000F69C573B', '05052008042wp10: shaft start to leak', 'text', '2016-06-01 11:05:58'),
+(19, '819060691830', '447559600526', '02000000DD7314A6', '05052008193wp04: pump breakdown', 'text', '2016-06-03 14:10:52'),
+(20, '819060691830', '447559600526', '02000000DD735266', '05052008182wp07: engine malfunction', 'text', '2016-06-03 14:13:56');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notification`
+--
+
+CREATE TABLE `notification` (
+  `id` int(11) NOT NULL,
+  `faci_id` varchar(255) NOT NULL,
+  `seen` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `notification`
+--
+
+INSERT INTO `notification` (`id`, `faci_id`, `seen`) VALUES
+(1, '20', 1),
+(2, '19', 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `regions`
 --
 
@@ -645,6 +618,28 @@ INSERT INTO `regions` (`id`, `region`) VALUES
 (20, 'Singida'),
 (21, 'Tabora'),
 (22, 'Tanga');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sentsms`
+--
+
+CREATE TABLE `sentsms` (
+  `id` int(11) NOT NULL,
+  `to_who` text NOT NULL,
+  `from_who` varchar(100) NOT NULL,
+  `message` text NOT NULL,
+  `date_sent` varchar(255) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sentsms`
+--
+
+INSERT INTO `sentsms` (`id`, `to_who`, `from_who`, `message`, `date_sent`) VALUES
+(1, '+819060691830', '447559600526', 'sdcsdcsdc', '1470982212'),
+(2, '+819060691830', '447559600526', 'sdcsdc', '1470982212');
 
 -- --------------------------------------------------------
 
@@ -711,7 +706,18 @@ CREATE TABLE `user` (
 
 INSERT INTO `user` (`id`, `username`, `password`, `role`) VALUES
 (1, 'administrator', '123', 'admin'),
-(13, 'amina', '123', 'admin');
+(2, 'sdcsdc', 'sdcdsc', 'normal'),
+(3, 'cc', 'cc', 'normal'),
+(4, 'steve', 'admin', ''),
+(5, 'helen', '123', 'admin'),
+(6, 'cars', '123', 'normal'),
+(7, 'bob', '123', 'normal'),
+(9, 'user', '123', 'user'),
+(10, 'vic', '123', 'admin'),
+(11, 'amina', '123', 'admin'),
+(12, 'plab', '123', 'user'),
+(13, 'plab1', 'plab1', 'user'),
+(14, 'plabplab', '123', 'user');
 
 -- --------------------------------------------------------
 
@@ -5946,15 +5952,15 @@ ALTER TABLE `faci_problems`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `faci_status`
+-- Indexes for table `faci_problems_back_6_1_2016`
 --
-ALTER TABLE `faci_status`
+ALTER TABLE `faci_problems_back_6_1_2016`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `faci_status_back_6_1_2016`
+-- Indexes for table `faci_status`
 --
-ALTER TABLE `faci_status_back_6_1_2016`
+ALTER TABLE `faci_status`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -5982,9 +5988,27 @@ ALTER TABLE `lgas`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `nexmo`
+--
+ALTER TABLE `nexmo`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `notification`
+--
+ALTER TABLE `notification`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `regions`
 --
 ALTER TABLE `regions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `sentsms`
+--
+ALTER TABLE `sentsms`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -6035,22 +6059,22 @@ ALTER TABLE `city`
 -- AUTO_INCREMENT for table `faci`
 --
 ALTER TABLE `faci`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=102;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=107;
 --
 -- AUTO_INCREMENT for table `faci_problems`
 --
 ALTER TABLE `faci_problems`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT for table `faci_problems_back_6_1_2016`
+--
+ALTER TABLE `faci_problems_back_6_1_2016`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `faci_status`
 --
 ALTER TABLE `faci_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
---
--- AUTO_INCREMENT for table `faci_status_back_6_1_2016`
---
-ALTER TABLE `faci_status_back_6_1_2016`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=218;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `faci_type`
 --
@@ -6072,10 +6096,25 @@ ALTER TABLE `latlang`
 ALTER TABLE `lgas`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=133;
 --
+-- AUTO_INCREMENT for table `nexmo`
+--
+ALTER TABLE `nexmo`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+--
+-- AUTO_INCREMENT for table `notification`
+--
+ALTER TABLE `notification`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `regions`
 --
 ALTER TABLE `regions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+--
+-- AUTO_INCREMENT for table `sentsms`
+--
+ALTER TABLE `sentsms`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `source`
 --
@@ -6090,7 +6129,7 @@ ALTER TABLE `txtlocal`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `wards`
 --

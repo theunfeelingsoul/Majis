@@ -103,7 +103,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 												<td><?php echo $value['to_who'];?></td>
 												<td><?php echo $value['message'];?></td>
 												<td><?php echo $value['date_sent']? date("M j",$value['date_sent']):'';?></td>
-												<td><a href=delete_sentsms.php?id="<?=$value['id'] ?>">DELETE</a></td>
+												<td><a href="delete_sentsms.php?id=<?=$value['id'] ?>">DELETE</a></td>
 											</tr>
 											 <?php   $i++;
 														endforeach;
