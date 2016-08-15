@@ -52,7 +52,7 @@ if (isset($_POST['report_submit'])) {
 		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
-			<div class="col-md-10">
+			<div class="col-md-10 content">
 				<div class="page-header">
 					<!-- <div class="page-header"> -->
 						<div class="page-title">Status of Facilities report</div>

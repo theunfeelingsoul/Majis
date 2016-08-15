@@ -27,7 +27,7 @@ include 'database.php';
 		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
-			<div class="col-md-10">
+			<div class="col-md-10 content">
 				<!-- <div class="row"> -->
 				<div class=" page-title">
 				<h2 class="page-tite">Broadcast SMS</h2>
@@ -57,19 +57,19 @@ include 'database.php';
 									<div class="form-group">
 										<label for="r" class="col-sm-1 control-label">To:</label>
 										<div class="col-sm-11">
-											<input type="text" name="r" class="form-control" id="r" placeholder="Add recipients seperated by a comma">
+											<input type="text" name="r" class="form-control" id="r" placeholder="Add recipients seperated by a comma" required>
 										</div>
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
-											<textarea name="m" class="form-control" rows="3" placeholder="Message"></textarea>
+											<textarea name="m" class="form-control" rows="3" placeholder="Message" required></textarea>
 										</div>
 									</div>
 									
 									<div class="form-group">
 
 										<div class="col-md-12">
-											<button type="button" value="dd" name="b" class="btn btn-default  form-control">Send</button>
+											<button type="submit" value="dd" name="b" class="btn btn-default  form-control">Send</button>
 										</div>
 									</div>
 								</form>

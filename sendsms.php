@@ -13,6 +13,8 @@ if ($_POST['b']) {
 	foreach ($rs as $key => $value) {
 		echo "<br>";
 		echo $value;
+		// $mobile = preg_replace('/\s+/', '', $value);
+		// $mobile = str_replace(' ', '', $value);
 		$resp = sendsms($value,$m);
 		$add .= $resp.',';
 

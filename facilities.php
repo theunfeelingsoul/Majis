@@ -84,7 +84,7 @@ if ($num_rows > 0) {
 		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
-			<div class="col-md-10 main-content">
+			<div class="col-md-10 content">
 				<h2 class="page-title">Facilities 
 					<?php echo $_SESSION['role'] == 'user' ? '<span class="hidden">':'<span>'; ?>
 					<a href="addfacility.php"><span class="label label-default">Add new</span></a>

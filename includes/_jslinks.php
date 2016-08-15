@@ -4,7 +4,9 @@
 	<script src="styles/js/jquery-1.11.3.min.js"></script>
 
 	<!-- booostrap JS -->
-	<script src="styles/bootstrap/js/bootstrap.min.js"></script> 
+	<script src="styles/bootstrap/js/bootstrap.min.js"></script>
+	 <!-- custom js -->
+	<script src="styles/js/majis.js"></script> 
 
 	<!-- Data Tables JS -->
 	<script type="text/javascript" src="https://cdn.datatables.net/s/dt/dt-1.10.10/datatables.min.js"></script>

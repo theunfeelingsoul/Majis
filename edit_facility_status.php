@@ -154,7 +154,7 @@
 		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
       
-			<div class="col-md-10">
+			<div class="col-md-10 content">
         <div class="container-fluid">
           <div class="row">
             <div class="col-md-12">

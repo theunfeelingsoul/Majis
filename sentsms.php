@@ -19,6 +19,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 					'from_who' 		=> $row['from_who'], 
 					'message' 		=> $row['message'], 
 					'date_sent' 		=> $row['date_sent'], 
+					'id' 		=> $row['id'], 
 				
 				);
 
@@ -45,7 +46,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
-			<div class="col-md-10">
+			<div class="col-md-10 content">
 				<!-- <div class="row"> -->
 				<div class=" page-title">
 				<h2 class="page-tite">Sent SMS</h2>
@@ -88,6 +89,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 											    <th>Recipent</th>
 											    <th>Message</th>
 											    <th>Date</th>
+											    <th>Delete</th>
 											</tr>
 										</thead>
 										<tbody>
@@ -101,6 +103,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 												<td><?php echo $value['to_who'];?></td>
 												<td><?php echo $value['message'];?></td>
 												<td><?php echo $value['date_sent']? date("M j",$value['date_sent']):'';?></td>
+												<td><a href=delete_sentsms.php?id="<?=$value['id'] ?>">DELETE</a></td>
 											</tr>
 											 <?php   $i++;
 														endforeach;

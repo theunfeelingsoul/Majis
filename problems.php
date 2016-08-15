@@ -7,6 +7,30 @@ include "includes/_permissions.php";
 include 'database.php';
 
 // create sql statement
+$sql_seen = "SELECT * FROM notification WHERE seen = 0";
+// queried the database
+$new_sms = array();
+if ($result = mysqli_query($conn,$sql_seen)) {
+
+	while ($row = mysqli_fetch_assoc($result)) {
+		$new_sms[] = $row['faci_id'];
+	}
+}
+// $result = mysqli_query($conn,$sql_seen) or die (mysqli_error());
+
+
+
+// echo "<pre>";
+// print_r($new_sms);
+// echo "</pre>";
+
+// exit();
+
+// set the notification to 0
+$sql_notify = "UPDATE notification SET seen=1 WHERE seen=0";
+mysqli_query($conn,$sql_notify) or die (mysqli_error());
+
+// create sql statement
 $sql = "SELECT * FROM faci_problems ORDER BY id DESC";
 // queried the database
 $result = mysqli_query($conn,$sql) or die (mysqli_error());
@@ -45,7 +69,7 @@ while ($row = mysqli_fetch_assoc($result)) {
 		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
-			<div class="col-md-10">
+			<div class="col-md-10 content">
 				<!-- <div class="row"> -->
 				<div class=" page-title">
 				<h2 class="page-tite">Incoming Problems</h2>
@@ -75,8 +99,9 @@ while ($row = mysqli_fetch_assoc($result)) {
 			                        		if ($data):
 				                        		foreach ($data as $key => $value):
 			                        	 ?>
-				                            <tr>
-				                                <td><?php echo $i ?></td>
+				                            <tr <?php echo in_array($value['id'], $new_sms)? "class='new-sms'" : ""; ?>>
+				                                <td><?php echo $i ?>
+				                                </td>
 				                                <td><?php echo $value['faci_name'] == ''? '<span class="label label-info">N/A</span>': $value['faci_name'] ?></td>
 				                                <td><?php echo $value['faci_num'] == ''? '<span class="label label-info">N/A</span>': $value['faci_num'] ?></td>
 				                                <td><?php echo $value['problems'] ?></td>

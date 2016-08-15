@@ -75,7 +75,7 @@
 	<div class= "container-fluid">
 		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
-			<div class="col-md-8">
+			<div class="col-md-8 content">
 				<h1 class="page-header">Edit Facility</h1>
       		<form class="form-horizontal" method="POST" action="">
             <?php 
@@ -163,7 +163,7 @@
             </div>
            <div class="form-group">
               <div class="col-sm-offset-2 col-sm-10">
-                <button type="submit" name="edit_facility" class="btn btn-primary">Submit</button>
+                <button type="submit" name="edit_facility" class="btn btn-primary form-control">Submit</button>
               </div>
           </div>
          

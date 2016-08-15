@@ -34,11 +34,11 @@
 		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
-			<div class="col-md-10">
+			<div class="col-md-10 content">
 				<h2 class="page-title"> Facility Location</h2>
 
 				<div class="row">
-					<div class="col-md-8">
+					<div class="col-md-8 ">
 						<form action="" method="get" id="admin_divsion">
 							<div class="col-sm-3">
 							<select id="region" name="name" class="form-control">

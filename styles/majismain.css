@@ -90,6 +90,8 @@ body{
 .sidebar {
   display: none;
 }
+
+/*this media query is for large screens*/
 @media (min-width: 768px) {
     .sidebar{
     	background-color:#26c6da;
@@ -102,6 +104,8 @@ body{
         overflow: hidden;
         display: block;
         z-index: 1000;
+        position: fixed;
+        /*width: 29.3%;*/
 
     }
 
@@ -185,42 +189,54 @@ body{
         /*display: b;*/
         /*visibility:visible;*/
     }
-} 
+
+    .content{
+        margin-left: 225px !important;
+    }
+
+}  /*end media query*/
+
+
+.content{
+    margin-left: 0px;
+}
+
 .nav-side{
-        /*display: block;*/
-         /*visibility:visible;*/
-    }
-/*end media query*/
-    #page{
-        min-height: 80vh;
-        margin-top: 64px;
-        background-color: #F1F1F1;
-        /*padding-bottom: 20px;*/
-    }
+    /*display: block;*/
+     /*visibility:visible;*/
+}
+#page{
+    min-height: 80vh;
+    margin-top: 64px;
+    /*background-color: #F1F1F1;*/
+    padding-bottom: 20px;
+}
 
-    .page-title{
-        /*padding-bottom: 30px;*/
-        font-size: 30px;
-        /*padding-left: 10px;*/
-        /*border-bottom: solid 1px #c5c5c5;*/
-        text-align: center;
-    }
+/*content*/
 
-    /*.page-title*/
+.page-title{
+    /*padding-bottom: 30px;*/
+    font-size: 30px;
+    /*padding-left: 10px;*/
+    /*border-bottom: solid 1px #c5c5c5;*/
+    text-align: center;
+}
 
-    /* 
-     * all li have default padding we just put O to 
-     * remove them inorder for the line to fit
-    */
-    .nav-sidebar li{
-    	border-bottom: 1px solid #d8d7d7;
-    	padding:0px; 
-    }
+/*.page-title*/
 
-    .sidebar ul{
-    	padding: 0px;
+/* 
+ * all li have default padding we just put O to 
+ * remove them inorder for the line to fit
+*/
+.nav-sidebar li{
+	border-bottom: 1px solid #d8d7d7;
+	padding:0px; 
+}
 
-    }
+.sidebar ul{
+	padding: 0px;
+
+}
 
 
 /*.row col-md-2 {
@@ -290,7 +306,7 @@ footer{
 }
 
 .copyright{
-	padding-top: 10px;	
+	padding-top: 20px;	
 	text-align: center;
 	color: #337ab7;
 	font-weight: bold;
@@ -471,4 +487,36 @@ footer{
 
 .sms-menu li:hover{
     background: #f1f1f1;
+}
+
+
+/*nofify*/
+.notify-text{
+}
+
+.profile-pic{
+     border-radius: 50%;
+}
+
+.glyphicon {
+    /*font-size: 27px !important;*/
+    top: 3px;
+}
+
+ .glyphicon-envelope{
+   /*color: #8bc34a !important;*/
+}
+
+
+/*this media query is for large screens*/
+@media (min-width: 768px) {
+    .notify-text {
+        /*float: right;*/
+        /*padding-top: 4px;
+        padding-left: 5px;*/
+    }
+}
+
+.new-sms{
+    background-color: #f1f1f1!important;
 }

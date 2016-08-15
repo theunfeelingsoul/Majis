@@ -28,39 +28,41 @@ $u = getAll('user');
 		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
-			<div class="col-md-10">
+			<div class="col-md-10 content">
 				<h1 class="page-title">Users</h1>
 
 				<div class="row">
 					<div class="col-md-12">
-						<div class="table-responsive">
-							<table class="display compact" id="sms-table">
-			                    <thead>
-		                            <tr>
-		                                <th>ID</th>
-		                                <th>Username</th>
-		                                <th>Role</th>
-		                            </tr>
-		                        </thead>
-		                        <tbody>
-		                        	<?php 
-		                        		$i = 1;
-		                        		if ($u):
-			                        		foreach ($u as $key => $user):
-		                        	 ?>
+						<div class="white-data-table">
+							<div class="table-responsive">
+								<table class="display compact" id="sms-table">
+				                    <thead>
 			                            <tr>
-			                                <td><?php echo $i++ ?></td>
-			                                <td><?php echo $user['username'] ?></td>
-			                               
-			                                <td><?php echo $user['role'] ?></td>
+			                                <th>ID</th>
+			                                <th>Username</th>
+			                                <th>Role</th>
 			                            </tr>
+			                        </thead>
+			                        <tbody>
+			                        	<?php 
+			                        		$i = 1;
+			                        		if ($u):
+				                        		foreach ($u as $key => $user):
+			                        	 ?>
+				                            <tr>
+				                                <td><?php echo $i++ ?></td>
+				                                <td><?php echo $user['username'] ?></td>
+				                               
+				                                <td><?php echo $user['role'] ?></td>
+				                            </tr>
 
-		                            <?php   
-											endforeach;
-			                           	endif;
-		                             ?>
-		                        </tbody>
-		                    </table>
+			                            <?php   
+												endforeach;
+				                           	endif;
+			                             ?>
+			                        </tbody>
+			                    </table>
+							</div>
 						</div>
 					</div>
 				</div>

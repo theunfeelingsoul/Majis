@@ -46,7 +46,7 @@
 		<div class="row" id="page">
 			<?php include "includes/_sidebar.php"; ?>
 
-			<div class="col-md-10">
+			<div class="col-md-10 content">
 				<h2 class="page-title"> Dash Board</h2>
 
 			
