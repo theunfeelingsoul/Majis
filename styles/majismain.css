@@ -520,3 +520,7 @@ footer{
 .new-sms{
     background-color: #f1f1f1!important;
 }
+
+.glyphicon-remove-circle{
+    color: red;
+}

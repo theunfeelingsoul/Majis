@@ -81,7 +81,6 @@ while ($row = mysqli_fetch_assoc($result)) {
 							<div class="panel-heading">Sent messages</div>
 							<div class="table-responsive">
 								<div class="white-data-table">
-									<!-- Table -->
 									<table  class="hover row-border compact" id="sms-table">
 										<thead>
 											<tr>
@@ -103,7 +102,12 @@ while ($row = mysqli_fetch_assoc($result)) {
 												<td><?php echo $value['to_who'];?></td>
 												<td><?php echo $value['message'];?></td>
 												<td><?php echo $value['date_sent']? date("M j",$value['date_sent']):'';?></td>
-												<td><a href="delete_sentsms.php?id=<?=$value['id'] ?>">DELETE</a></td>
+												<td>
+
+													<a onclick='deleteItem(<?php echo $value['id'] ?>);return false;'  href="delete_sentsms.php?id=<?=$value['id'] ?>">
+													<span class="glyphicon glyphicon-remove-circle"></span>
+													</a>
+												</td>
 											</tr>
 											 <?php   $i++;
 														endforeach;
@@ -127,7 +131,17 @@ while ($row = mysqli_fetch_assoc($result)) {
    
       
  
+<script type="text/javascript">
+	function deleteItem($v) {
+		 var x = confirm("Are you sure you want to delete?");
+	  if (x)
+	  window.location.href = "delete_sentsms.php?id="+v;
+	  else
+	    return false;
 
+    
+}
+</script>
 
 
 

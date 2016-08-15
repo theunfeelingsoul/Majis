@@ -9,8 +9,7 @@ if ($_GET['id']) {
 	$sql = "DELETE FROM sentsms WHERE id = $id";
 	$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
 
-	
-	header("sentsms.php");
+	header("Location:sentsms.php");
 }
 
 
