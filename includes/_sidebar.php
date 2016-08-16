@@ -25,7 +25,7 @@
 			<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
 				<div class="panel-body side-bar-body">
 					<ul>
-						<a href="problems.php">
+						<a id="inc" href="problems.php">
 							<li>Incoming problems</li>
 						</a>
 						<a href="broadcast.php">

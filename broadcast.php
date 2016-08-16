@@ -62,7 +62,7 @@ include 'database.php';
 									</div>
 									<div class="form-group">
 										<div class="col-md-12">
-											<textarea name="m" class="form-control" rows="3" placeholder="Message" required></textarea>
+											<textarea name="m" class="form-control" rows="10" placeholder="Message" required></textarea>
 										</div>
 									</div>
 									

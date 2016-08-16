@@ -66,7 +66,7 @@
 				                                <th>Facility Name</th>
 				                                <th>Problem(s)</th>
 				                                <th>Status</th>
-				                                <th>Status</th>
+				                                 <?php echo $_SESSION['role'] == 'user' ? '<th class="hidden">':'<th>' ?>Update</th>
 				                            </tr>
 				                        </thead>
 				                        <tbody>

@@ -12,6 +12,15 @@ if ($_GET['id']) {
 	header("Location:sentsms.php");
 }
 
+if ($_GET['userid']) {
+
+	$userid =$_GET['userid'];
+	$sql = "DELETE FROM user WHERE id = $userid";
+	$result = mysqli_query($conn,$sql) or die(mysqli_error($conn));
+
+	header("Location:users.php?d=1");
+}
+
 
 
 
