@@ -1,6 +1,6 @@
 
     <meta name="viewport" content="width=device-width, shrink-to-fit=no, initial-scale=1">
-<link rel="icon" type="image/png" href="img5/favicon.ico" sizes="32x32" />
+<link rel="icon" type="image/png" href="styles/img/favicon/favicon.ico" sizes="32x32" />
 <!-- <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" /> -->
 
 	<!-- links css-->
